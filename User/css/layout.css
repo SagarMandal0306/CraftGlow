@@ -175,3 +175,38 @@ footer .contain .sec p i{
 }
 
 
+
+@media(max-width:850px){
+    footer .contain {
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width:700px){
+    footer .contain .sec p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width:520px){
+    footer {
+        padding: 33px;
+    }
+    footer .contain .first {
+        width: 100%;
+    }
+}
+
+@media (max-width:400px){
+    footer .copy-right {
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width:350px){
+    footer .copy-right {
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+}
