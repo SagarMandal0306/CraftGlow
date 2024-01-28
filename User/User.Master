@@ -2,18 +2,110 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head runat="server">
-    <title></title>
+    <title>CraftGlow</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/layout.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <nav>
+                <div class="logo">
+                    <img src="../Assets/user/logo.png" alt="" />
+                    <div class="dropdown">
+                        <div class="icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../Assets/icons/menu-02-svgrepo-com.svg" alt="" />
+                            <span>categories</span>
+                            <%--<i class="fa-solid fa-circle-xmark" style="display:none"></i>--%>
+                        </div>
+
+                        <%--<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown button
+                        </button>--%>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Paper FLower</a></li>
+                            <li><a class="dropdown-item" href="#">Leater Work</a></li>
+                            <li><a class="dropdown-item" href="#">Embroidery</a></li>
+                            <li><a class="dropdown-item" href="#">Candles</a></li>
+                            <li><a class="dropdown-item" href="#">Knitting</a></li>
+                            <li><a class="dropdown-item" href="#">Origami</a></li>
+                            <li><a class="dropdown-item" href="#">Carpentry</a></li>
+                            <li><a class="dropdown-item" href="#">Chrocet</a></li>
+                            <li><a class="dropdown-item" href="#">Glass Art</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="search">
+                   
+                        <asp:TextBox runat="server" ID="SearchBox" CssClass="SearchBox" Placeholder="Search Products..."/>
+                        <i class="fa-solid fa-magnifying-glass src-icon"></i>
+                    
+                </div>
+                <div class="icons">
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-regular fa-heart"></i>
+                   <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </nav>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+
+              <footer>
+        <div class="contain">
+            <div class="first">
+                <span>
+                    <img src="../Assets/user/logo.png" alt=""/>
+                    <h1>CraftGlow</h1>
+                </span>
+                <%--<button class="btn">Buy</button>--%>
+                <p>Elevate Your Lifestyle with Handcrafted Excellence – Where Every Creation is a Story in Itself.</p>
+
+            </div>
+            <div class="sec">
+                <h1>Shop</h1>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">Gift cards</a></p>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">CraftGlow Register</a></p>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">Sitemap</a></p>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">CraftGlow Blog</a></p>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">CraftGlow India</a></p>
+
+            </div>
+            <div class="sec">
+                <h1>Sell</h1>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">Sell on CraftGlow</a></p>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">Teams</a></p>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">Forum</a></p>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">Forum</a></p>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">Affilates & Creators</a></p>
+               
+
+            </div>
+            <div class="sec">
+                <h1>Help</h1>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">Help Center</a></p>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">Privacy setting</a></p>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">Gallery</a></p>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">Videos</a></p>
+                <p><i class="fa-solid fa-chevron-right"></i><a href="#">Alumni Network</a></p>
+
+            </div>
+        </div>
+        <div class="copy-right">
+            <p>Copyright © 2023 CraftGlow India. All Rights Reserved
+                Current IP Address: 157.41.228.221</p>
+        </div>
+    </footer>
         </div>
     </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
