@@ -69,10 +69,14 @@
   <ItemGroup>
     <Content Include="Assets\icons\menu-02-svgrepo-com.svg" />
     <Content Include="Assets\user\logo.png" />
+    <Content Include="Assets\user\rebrand-login-ill.svg" />
     <Content Include="User\About.aspx" />
     <Content Include="User\css\layout.css" />
+    <Content Include="User\css\Login.css" />
     <Content Include="User\Home.aspx" />
+    <Content Include="User\Login.aspx" />
     <Content Include="User\Profile.aspx" />
+    <Content Include="User\Signup.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +94,20 @@
     </Compile>
     <Compile Include="User\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
