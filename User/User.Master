@@ -51,10 +51,11 @@
                     
                 </div>
                 <div class="icons">
-                    <i class="fa-solid fa-user"></i>
-                    <i class="fa-regular fa-heart"></i>
-                   <i class="fa-solid fa-cart-shopping"></i>
+                    <a href="Profile.aspx" class="icon-link"><i class="fa-solid fa-user"></i></a>
+                    <a href="Wishlist.aspx" class="icon-link"><i class="fa-regular fa-heart"></i></a>
+                    <a href="Cart.aspx" class="icon-link"><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
+
             </nav>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

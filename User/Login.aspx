@@ -36,26 +36,52 @@
         </div>
     </form>
 
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
    
     <script>
-      var btn=document.getElementById("Signin");
-      var email=document.querySelector("#Email").value;
-      var pass=document.querySelector("#Password").value;
-      var error=document.querySelector(".error");
-      btn.onclick=(e)=>{
-        e.preventDefault();
+        $("#Signin").on("click", function (e) {
+            e.preventDefault();
 
-        if(email=="" || pass==""){
-            error.innerText="Compulsory to fill all the filds*";
-            if(pass.length <6){
-                error.innerText="Password must be 6 characters*";
+            let email = $("#Email").val();
+            let pass = $("#Password").val();
+            let error = $(".error");
+
+            if (email === "" || pass === "") {
+                error.text("Compulsory to fill all the fields*");
+            } else {
+                if (pass.length < 6) {
+                    error.text("Password must be 6 characters*");
+                } else {
+                    // Call the server-side method to handle login
+                    loginUser(email, pass);
+                }
             }
-        }
+        });
 
-      }
+        function loginUser(email, pass) {
+            $.ajax({
+                type: "POST",
+                url: "Login.aspx/LoginUser", // Specify the correct path to your server-side method
+                data: JSON.stringify({ Email: email, Password: pass }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.d === "success") {
+                        // Login successful, perform any necessary actions
+                        console.log("Login successful");
+                        // Redirect to the desired page
+                        window.location.reload();
+                    } else {
+                        $(".error").text(response.d);
+                    }
+                },
+                error: function (error) {
+                    $(".error").text("An error occurred during login.");
+                    console.log(error);
+                }
+            });
+        }
     </script>
 </body>
 </html>

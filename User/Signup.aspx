@@ -20,16 +20,16 @@
     </head>
 
     <body>
-        <form id="form1" runat="server">
+        <form id="form1" runat="server" >
             <nav>
-                <img src="../Assets/user/logo.png" alt="">
+                <img src="../Assets/user/logo.png" alt=""/>
             </nav>
             <div class="content">
                 <div class="form">
                     <h1>Sign up</h1>
                     <p>Already have an account?<a href="Login.aspx">Sign In</a></p>
                     <div class="mb-3">
-                        <p class="text-danger error"></p>
+                        <p runat="server" class="text-danger error" id="Err"></p>
                         <label for="">Name*</label>
                         <asp:TextBox runat="server" ID="Name" Placeholder="Enter your name.." CssClass="input-box" />
                     </div>
@@ -52,19 +52,20 @@
                             <div style="width: 60%;margin-right:20px ;">
                                 <label for="">Contact*</label>
                                 <div class="wrapp">
-                                    <input type="text" class="input-box " value="+91" readonly style="width: 15%;margin-right: 3px;">
-                                <asp:TextBox runat="server" ID="Contact" Placeholder="Enter Contact Number.."
-                                    CssClass="input-box" />
+                                    <input type="text" class="input-box " value="+91" readonly="true"
+                                        style="width: 15%;margin-right: 3px;" />
+                                    <asp:TextBox runat="server" ID="Contact" Placeholder="Enter Contact Number.."
+                                        CssClass="input-box" />
                                 </div>
                             </div>
                             <div style="width: 40%;">
                                 <label for="">DOB*</label>
                                 <asp:TextBox runat="server" ID="DOB" CssClass="input-box datepicker"
-                                    Placeholder="dd/mm/yyyy" onblur="validateDate(this.value)" />
+                                    Placeholder="dd/mm/yyyy" />
                             </div>
                         </div>
                     </div>
-                    <button id="Signin"  class="button">Signup</button> 
+                    <asp:Button runat="server" ID="Signin" Text="Signup" CssClass="button" />
                 </div>
             </div>
         </form>
@@ -73,6 +74,7 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
 
+        
         <script>
             $(function () {
                 $(".datepicker").datepicker({
@@ -83,62 +85,106 @@
             });
         </script>
 
+     <!-- Add the following script at the end of your <body> tag in signup.aspx -->
         <script>
-            let btn = document.querySelector("#Signin");
-            let Name = document.querySelector("#Name").value;
-            let email = document.querySelector("#Email").value;
-            let pass = document.querySelector("#Password").value;
-            let con = document.querySelector("#Contact").value;
-            let dob = document.querySelector("#DOB");
-            let error = document.querySelector(".error");
+            $(function () {
+                $("#Signin").on("click", function (e) {
+                    e.preventDefault();
 
-            function validateDate(input) {
-                var regex = /^\d{2}\/\d{2}\/\d{4}$/;
+                    let Name = $("#Name").val();
+                    let email = $("#Email").val();
+                    let pass = $("#Password").val();
+                    let con = $("#Contact").val();
+                    let dob = $("#DOB").val();
 
-                if (!regex.test(input)) {
-                    // alert("Invalid date format. Please enter date in DD/MM/YYYY format.");
-                    error.innerText = "Invalid date format. Please enter date in DD/MM/YYYY format.";
-                    return;
+                    if (Name === "" || email === "" || pass === "" || con === "" || dob === "") {
+                        $(".error").text("Compulsory to fill all the fields");
+                    } else {
+                        if (pass.length < 6) {
+                            $(".error").text("Your password must be 6 digits or greater.");
+                        } else {
+                            if (con.length !== 10) {
+                                $(".error").text("Your contact number must be 10 digits.");
+                            } else {
+                               if (!isValidDate(dob)) {
+                                    $(".error").text("Invalid date of birth. Please enter a valid date.");
+                                } else {
+                                    if (!isValidYear(dob)) {
+                                        $(".error").text("Invalid year in the date of birth. Please enter a valid year.");
+                                    } else {
+                                        // Call the server-side method to handle registration
+                                        registerUser(Name, email, pass, con, dob);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+
+                function isValidDate(dateString) {
+                    // Validate the date format (dd/mm/yyyy)
+                    var regex = /^\d{2}\/\d{2}\/\d{4}$/;
+                    if (!regex.test(dateString)) {
+                        return false;
+                    }
+
+                    // Validate the date using JavaScript Date object
+                    var parts = dateString.split("/");
+                    var day = parseInt(parts[0], 10);
+                    var month = parseInt(parts[1], 10);
+                    var year = parseInt(parts[2], 10);
+
+                    var dateObject = new Date(year, month - 1, day);
+
+                    return (
+                        dateObject.getDate() === day &&
+                        dateObject.getMonth() === month - 1 &&
+                        dateObject.getFullYear() === year
+                    );
+                  }
+
+
+                  function isValidYear(dateString) {
+                    var parts = dateString.split("/");
+                    var year = parseInt(parts[2], 10);
+
+                    // Define an acceptable range of years (e.g., from 1900 to the current year)
+                    var minYear = 1900;
+                    var maxYear = new Date().getFullYear();
+
+                    return year >= minYear && year <= maxYear;
+                  }
+
+                function registerUser(Name, email, pass, con, dob) {
+                    $.ajax({
+                        type: "POST",
+                        url: "signup.aspx/RegisterUser", // Specify the correct path to your server-side method
+                        data: JSON.stringify({ Name: Name, Email: email, Password: pass, Contact: con, DOB: dob }),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                                console.log(response);
+                            if (response.d === "success") {
+                                // Registration successful, perform any necessary actions
+                                console.log("Registration successful");
+                                window.location.reload();
+                            } else {
+                                $(".error").text(response.d);
+                            }
+                        },
+                        error: function (error) {
+                            $(".error").text("An error occurred during registration.");
+                            console.log(error);
+                        }
+                    });
                 }
-
-                var parts = input.split('/');
-                var day = parseInt(parts[0], 10);
-                var month = parseInt(parts[1], 10);
-                var year = parseInt(parts[2], 10);
-
-                // Check if month is in the valid range (1 to 12)
-                if (month < 1 || month > 12) {
-                    // alert("Invalid month. Please enter a valid month.");
-                    error.innerText = "Invalid month. Please enter a valid month.";
-                    return;
-                }
-
-                // Check if day is in the valid range for the given month
-                var daysInMonth = new Date(year, month, 0).getDate();
-                if (day < 1 || day > daysInMonth) {
-                    // alert("Invalid day. Please enter a valid day for the selected month.");
-
-                    error.innerText = "Invalid day. Please enter a valid day for the selected month.";
-                    return;
-                }
-
-                error.style.display="none"
-
-                // You can also add additional checks for the year if needed
-                // For example, check if the year is within a specific range
-            }
+            });
 
 
-            btn.onclick = (e) => {
-                e.preventDefault();
-                console.log(Name);
-                if (Name == "" || email == "" || pass == "" || con == "" || dob.value == "") {
-                    error.innerText="Compulsory to fill all the filds";
 
-                }
 
-            }
         </script>
+
 
 
     </body>

@@ -11,6 +11,7 @@ nav{
     border-bottom: 0.5px solid gray;
     position: fixed;
     width: 100vw;
+    background-color: white;
 }
 nav img{
     width: 150px;

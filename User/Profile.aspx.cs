@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace Craftglow.User
 {
@@ -11,7 +12,17 @@ namespace Craftglow.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (HttpContext.Current.Session["UserName"] == null)
+            {
+                 Response.Redirect("~/User/Login.aspx");
+            }
+        }
 
+        protected void logout_current_user_Click(object sender, EventArgs e)
+        {
+            HttpContext.Current.Session["UserName"] = null;
+            HttpContext.Current.Session["UserEmail"] = null;
+            Response.Redirect("~/User/Login.aspx");
         }
     }
 }

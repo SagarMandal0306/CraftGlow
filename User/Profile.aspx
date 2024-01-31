@@ -2,4 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h1>PROFILE PAGE</h1>
+    <asp:Button ID="logout_current_user" runat="server" Text="Logout" OnClick="logout_current_user_Click" />
 </asp:Content>

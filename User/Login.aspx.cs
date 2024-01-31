@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Web.Services;
 
 namespace Craftglow.User
 {
@@ -11,7 +8,46 @@ namespace Craftglow.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (HttpContext.Current.Session["UserName"] != null)
+            {
+                string userName = HttpContext.Current.Session["UserName"].ToString();
+                // Now you have the username and can use it as needed
 
+                HttpContext.Current.Response.Redirect("Home.aspx");
+            }
+
+        }
+
+
+        [WebMethod]
+        public static string LoginUser(string Email, string Password)
+        {
+            try
+            {
+                // Validate the user credentials against the database
+                Connectiondb cdb = new Connectiondb();
+                cdb.Sqlquery("select * from [user] where email = '" + Email + "' and pass = '" + Password + "'");
+
+                if (cdb.ds.Tables[0].Rows.Count > 0)
+                {
+                    // Login successful
+                    // You can store user details in session if needed
+                    HttpContext.Current.Session["UserName"] = cdb.ds.Tables[0].Rows[0]["name"].ToString();
+                    HttpContext.Current.Session["UserEmail"] = cdb.ds.Tables[0].Rows[0]["email"].ToString();
+
+                    return "success";
+                }
+                else
+                {
+                    // Invalid credentials
+                    return "Invalid email or password";
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or return an appropriate error message
+                return "An error occurred during login. " + ex.Message;
+            }
         }
     }
 }
