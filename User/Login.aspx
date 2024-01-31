@@ -48,8 +48,10 @@
       btn.onclick=(e)=>{
         e.preventDefault();
 
-        if(email=="" || pass==""){
+        if(email==="" || pass===""){
             error.innerText="Compulsory to fill all the filds*";
+            
+        }else{
             if(pass.length <6){
                 error.innerText="Password must be 6 characters*";
             }

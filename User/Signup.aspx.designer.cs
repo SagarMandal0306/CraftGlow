@@ -24,6 +24,15 @@ namespace Craftglow.User
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Err control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Err;
+
+        /// <summary>
         /// Name control.
         /// </summary>
         /// <remarks>
@@ -69,12 +78,12 @@ namespace Craftglow.User
         protected global::System.Web.UI.WebControls.TextBox DOB;
 
         /// <summary>
-        /// Signin control.
+        /// Submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Signin;
+        protected global::System.Web.UI.WebControls.Button Submit;
     }
 }

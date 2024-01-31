@@ -20,16 +20,16 @@
     </head>
 
     <body>
-        <form id="form1" runat="server">
+        <form id="form1" runat="server" >
             <nav>
-                <img src="../Assets/user/logo.png" alt="">
+                <img src="../Assets/user/logo.png" alt=""/>
             </nav>
             <div class="content">
                 <div class="form">
                     <h1>Sign up</h1>
                     <p>Already have an account?<a href="Login.aspx">Sign In</a></p>
                     <div class="mb-3">
-                        <p class="text-danger error"></p>
+                        <p runat="server" class="text-danger error" id="Err"></p>
                         <label for="">Name*</label>
                         <asp:TextBox runat="server" ID="Name" Placeholder="Enter your name.." CssClass="input-box" />
                     </div>
@@ -52,19 +52,21 @@
                             <div style="width: 60%;margin-right:20px ;">
                                 <label for="">Contact*</label>
                                 <div class="wrapp">
-                                    <input type="text" class="input-box " value="+91" readonly style="width: 15%;margin-right: 3px;">
-                                <asp:TextBox runat="server" ID="Contact" Placeholder="Enter Contact Number.."
-                                    CssClass="input-box" />
+                                    <input type="text" class="input-box " value="+91" readonly="true"
+                                        style="width: 15%;margin-right: 3px;" />
+                                    <asp:TextBox runat="server" ID="Contact" Placeholder="Enter Contact Number.."
+                                        CssClass="input-box" />
                                 </div>
                             </div>
                             <div style="width: 40%;">
                                 <label for="">DOB*</label>
                                 <asp:TextBox runat="server" ID="DOB" CssClass="input-box datepicker"
-                                    Placeholder="dd/mm/yyyy" onblur="validateDate(this.value)" />
+                                    Placeholder="dd/mm/yyyy" />
                             </div>
                         </div>
                     </div>
-                    <asp:Button runat="server" ID="Signin" Text="Signup" CssClass="button" />
+
+                    <asp:Button ID="Submit" runat="server" Text="Signup" CssClass="button" OnClick="Submit_Click"  />
                 </div>
             </div>
         </form>
@@ -84,60 +86,76 @@
         </script>
 
         <script>
-            let btn = document.querySelector("#Signin");
-            let Name = document.querySelector("#Name");
-            let email = document.querySelector("#Email");
-            let pass = document.querySelector("#Password");
-            let con = document.querySelector("#Contact");
-            let dob = document.querySelector("#DOB");
-            let error = document.querySelector(".error")
-
-            function validateDate(input) {
-                var regex = /^\d{2}\/\d{2}\/\d{4}$/;
-
-                if (!regex.test(input)) {
-                    // alert("Invalid date format. Please enter date in DD/MM/YYYY format.");
-                    error.innerText = "Invalid date format. Please enter date in DD/MM/YYYY format.";
-                    return;
-                }
-
-                var parts = input.split('/');
-                var day = parseInt(parts[0], 10);
-                var month = parseInt(parts[1], 10);
-                var year = parseInt(parts[2], 10);
-
-                // Check if month is in the valid range (1 to 12)
-                if (month < 1 || month > 12) {
-                    // alert("Invalid month. Please enter a valid month.");
-                    error.innerText = "Invalid month. Please enter a valid month.";
-                    return;
-                }
-
-                // Check if day is in the valid range for the given month
-                var daysInMonth = new Date(year, month, 0).getDate();
-                if (day < 1 || day > daysInMonth) {
-                    // alert("Invalid day. Please enter a valid day for the selected month.");
-
-                    error.innerText = "Invalid day. Please enter a valid day for the selected month.";
-                    return;
-                }
-
-                error.style.display="none"
-
-                // You can also add additional checks for the year if needed
-                // For example, check if the year is within a specific range
-            }
-
+            let btn = document.querySelector("#Submit");
+            let error = document.querySelector(".error");
 
             btn.onclick = (e) => {
-                e.preventDefault();
+                //  e.preventDefault();
+                
+                let Name = document.querySelector("#Name").value;
+                let email = document.querySelector("#Email").value;
+                let pass = document.querySelector("#Password").value;
+                let con = document.querySelector("#Contact").value;
+                let dob = document.querySelector("#DOB").value;
+                
 
-                if(Name == "" || email=="" || pass=="" || con=="" || dob==""){
-                    error.inerText="Compulsory to fill all the filds";
+                if (Name === "" || email === "" || pass === "" || con === "" || dob === "") {
+                    console.log(Name, email, pass, con, dob)
+                    error.innerText = "Compulsory to fill all the filds";
 
                 }
 
+                else {
+                    if (pass.length < 6) {
+                        error.innerText = "Your password must be 6 digit or greater .";
+                    } else {
+                        if (con.length < 10 && con.length > 10) {
+                            error.innerText = "Your contact number must be 10 digit ";
+                        }
+                    }
+                }
+
+
             }
+
+            // function validateDate(input) {
+            //     var regex = /^\d{2}\/\d{2}\/\d{4}$/;
+
+            //     if (!regex.test(input)) {
+            //         // alert("Invalid date format. Please enter date in DD/MM/YYYY format.");
+            //         error.innerText = "Invalid date format. Please enter date in DD/MM/YYYY format.";
+            //         return;
+            //     }
+
+            //     var parts = input.split('/');
+            //     var day = parseInt(parts[0], 10);
+            //     var month = parseInt(parts[1], 10);
+            //     var year = parseInt(parts[2], 10);
+
+            //     // Check if month is in the valid range (1 to 12)
+            //     if (month < 1 || month > 12) {
+            //         // alert("Invalid month. Please enter a valid month.");
+            //         error.innerText = "Invalid month. Please enter a valid month.";
+            //         return;
+            //     }
+
+            //     // Check if day is in the valid range for the given month
+            //     var daysInMonth = new Date(year, month, 0).getDate();
+            //     if (day < 1 || day > daysInMonth) {
+            //         // alert("Invalid day. Please enter a valid day for the selected month.");
+
+            //         error.innerText = "Invalid day. Please enter a valid day for the selected month.";
+            //         return;
+            //     }
+
+            //     // error.style.display="none"
+
+            //     // You can also add additional checks for the year if needed
+            //     // For example, check if the year is within a specific range
+            // }
+
+
+
         </script>
 
 
