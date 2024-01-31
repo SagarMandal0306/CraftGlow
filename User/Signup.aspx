@@ -64,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <asp:Button runat="server" ID="Signin" Text="Signup" CssClass="button" />
+                    <button id="Signin"  class="button">Signup</button> 
                 </div>
             </div>
         </form>
@@ -85,12 +85,12 @@
 
         <script>
             let btn = document.querySelector("#Signin");
-            let Name = document.querySelector("#Name");
-            let email = document.querySelector("#Email");
-            let pass = document.querySelector("#Password");
-            let con = document.querySelector("#Contact");
+            let Name = document.querySelector("#Name").value;
+            let email = document.querySelector("#Email").value;
+            let pass = document.querySelector("#Password").value;
+            let con = document.querySelector("#Contact").value;
             let dob = document.querySelector("#DOB");
-            let error = document.querySelector(".error")
+            let error = document.querySelector(".error");
 
             function validateDate(input) {
                 var regex = /^\d{2}\/\d{2}\/\d{4}$/;
@@ -131,9 +131,9 @@
 
             btn.onclick = (e) => {
                 e.preventDefault();
-
-                if(Name == "" || email=="" || pass=="" || con=="" || dob==""){
-                    error.inerText="Compulsory to fill all the filds";
+                console.log(Name);
+                if (Name == "" || email == "" || pass == "" || con == "" || dob.value == "") {
+                    error.innerText="Compulsory to fill all the filds";
 
                 }
 
