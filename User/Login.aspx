@@ -28,7 +28,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="">Password*</label>
-                    <asp:TextBox runat="server" ID="Password" Placeholder="Enter password.." CssClass="input-box"/>
+                    <asp:TextBox runat="server" ID="Password" Placeholder="Enter password.." CssClass="input-box" TextMode="Password"/>
                 </div>
                 <asp:Button runat="server" ID="Signin" Text="Login" CssClass="button"/>
                 <a href="#" class="for-pw">forget password?</a>

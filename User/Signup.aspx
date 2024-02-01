@@ -55,7 +55,7 @@
                                     <input type="text" class="input-box " value="+91" readonly="true"
                                         style="width: 15%;margin-right: 3px;" />
                                     <asp:TextBox runat="server" ID="Contact" Placeholder="Enter Contact Number.."
-                                        CssClass="input-box" />
+                                        CssClass="input-box" TextMode="Number"/>
                                 </div>
                             </div>
                             <div style="width: 40%;">
@@ -103,7 +103,7 @@
                         if (pass.length < 6) {
                             $(".error").text("Your password must be 6 digits or greater.");
                         } else {
-                            if (con.length !== 10) {
+                            if (con.length !== 10 || con<0) {
                                 $(".error").text("Your contact number must be 10 digits.");
                             } else {
                                if (!isValidDate(dob)) {
@@ -167,7 +167,7 @@
                             if (response.d === "success") {
                                 // Registration successful, perform any necessary actions
                                 console.log("Registration successful");
-                                window.location.reload();
+                                window.location.href="Login.aspx";
                             } else {
                                 $(".error").text(response.d);
                             }

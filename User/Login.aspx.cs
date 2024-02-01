@@ -26,21 +26,32 @@ namespace Craftglow.User
             {
                 // Validate the user credentials against the database
                 Connectiondb cdb = new Connectiondb();
-                cdb.Sqlquery("select * from [user] where email = '" + Email + "' and pass = '" + Password + "'");
+                cdb.Sqlquery("select * from [user] where email = '" + Email + "' ");
 
                 if (cdb.ds.Tables[0].Rows.Count > 0)
                 {
-                    // Login successful
-                    // You can store user details in session if needed
-                    HttpContext.Current.Session["UserName"] = cdb.ds.Tables[0].Rows[0]["name"].ToString();
-                    HttpContext.Current.Session["UserEmail"] = cdb.ds.Tables[0].Rows[0]["email"].ToString();
 
-                    return "success";
+                    string hashPassword = cdb.ds.Tables[0].Rows[0]["pass"].ToString();
+                    if (BCrypt.Net.BCrypt.Verify(Password, hashPassword))
+                    {
+
+
+                        // Login successful
+                        // You can store user details in session if needed
+                        HttpContext.Current.Session["UserName"] = cdb.ds.Tables[0].Rows[0]["name"].ToString();
+                        HttpContext.Current.Session["UserEmail"] = cdb.ds.Tables[0].Rows[0]["email"].ToString();
+
+                        return "success";
+                    }
+                    else
+                    {
+                       return "Invalid password";
+                    }
                 }
                 else
                 {
                     // Invalid credentials
-                    return "Invalid email or password";
+                    return "Invalid email";
                 }
             }
             catch (Exception ex)

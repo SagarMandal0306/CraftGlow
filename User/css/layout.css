@@ -9,6 +9,11 @@ body{
     overflow-x: hidden;
 }
 
+.icon-link{
+    color:black !important;
+    text-decoration:none !important;
+}
+
 body::-webkit-scrollbar{
     display: none;
 }

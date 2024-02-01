@@ -2,6 +2,7 @@
 using System.Web;
 using System.Web.Services;
 using System.Xml.Linq;
+using BCrypt;
 
 namespace Craftglow.User
 {
@@ -24,6 +25,7 @@ namespace Craftglow.User
         {
             try
             {
+                string HashPassword = BCrypt.Net.BCrypt.HashPassword(Password, BCrypt.Net.BCrypt.GenerateSalt());
                 //Check if the email already exists(uncomment the code if needed)
                 Connectiondb cdb = new Connectiondb();
                 cdb.Sqlquery("select * from [user] where email = '" + Email + "'");
@@ -33,17 +35,19 @@ namespace Craftglow.User
                 }
 
                 // Generate a unique user ID
-                string userid = "user" + new Random().Next(11111, 99999);
+                string userid = "user" + new Random().Next(11111, 99999);   
                 string date = DateTime.Now.ToString();
 
                 // Insert user data into the database
-                cdb.Sqlquery("INSERT INTO [user] (name, email, pass, contact, dob, userid, dnt) VALUES('" + Name + "','" + Email + "','" + Password + "','+91" + Contact + "','" + DOB + "','" + userid + "','" + date + "')");
+                cdb.Sqlquery("INSERT INTO [user] (name, email, pass, contact, dob, userid, dnt) VALUES('" + Name + "','" + Email + "','" + HashPassword + "','+91" + Contact + "','" + DOB + "','" + userid + "','" + date + "')");
                 // Store user name and email in session
-                HttpContext.Current.Session["UserName"] = Name;
-                HttpContext.Current.Session["UserEmail"] = Email;
+                // HttpContext.Current.Session["UserName"] = Name;
+                // HttpContext.Current.Session["UserEmail"] = Email;
 
                 // You can use HttpContext.Current.Response.Redirect instead of Response.Redirect
-                HttpContext.Current.Response.Redirect("Home.aspx",true);
+                //  HttpContext.Current.Response.Redirect("Signup.aspx",true);
+                 
+
                 return "success";
             }
             catch (Exception ex)
