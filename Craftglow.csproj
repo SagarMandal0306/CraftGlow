@@ -71,8 +71,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\icons\menu-02-svgrepo-com.svg" />
+    <Content Include="Assets\user\227729.jpg" />
+    <Content Include="Assets\user\about-image.jpg" />
+    <Content Include="Assets\user\banner-gold-jewellery-2022.jpg" />
+    <Content Include="Assets\user\banner-img1.jpg" />
+    <Content Include="Assets\user\brass.jpg" />
+    <Content Include="Assets\user\category\Aari_embroidery.png" />
+    <Content Include="Assets\user\category\Shwals-Wraps.jpg" />
+    <Content Include="Assets\user\download %281%29.jpeg" />
+    <Content Include="Assets\user\download.jpeg" />
     <Content Include="Assets\user\logo.png" />
+    <Content Include="Assets\user\products\dsc02308.jpg" />
+    <Content Include="Assets\user\products\dsc02497_1.jpg" />
+    <Content Include="Assets\user\products\dsc02512_3_3.jpg" />
+    <Content Include="Assets\user\products\dsc04872.jpg" />
+    <Content Include="Assets\user\products\dsc04928.jpg" />
+    <Content Include="Assets\user\products\dsc05079.jpg" />
+    <Content Include="Assets\user\products\Kashish_Kangan-03.jpg" />
+    <Content Include="Assets\user\products\Nadeya_shibori_saree.png" />
     <Content Include="Assets\user\rebrand-login-ill.svg" />
+    <Content Include="Assets\user\vase-pottery-decoration-wood-craft-table-cultures-nature-clay-generated-by-ai-free-photo.jpg" />
     <Content Include="User\About.aspx" />
     <Content Include="User\css\layout.css" />
     <Content Include="User\css\Login.css" />
@@ -138,6 +156,8 @@
   <ItemGroup>
     <Content Include="Admin\Admin.Master" />
     <None Include=".editorconfig" />
+    <Content Include="Assets\user\loom-bracelets-on-hand-little-260nw-2175441471.webp" />
+    <Content Include="Assets\user\Lot_166_Dhokra_Shopify_home_page_banner_5f494553-7da3-48f7-afba-b7ce52d46540.webp" />
     <None Include="packages.config" />
     <Content Include="User\User.Master" />
     <None Include="Web.Debug.config">

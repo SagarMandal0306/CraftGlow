@@ -11,14 +11,11 @@ namespace Craftglow.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (HttpContext.Current.Session["UserName"] == null)
-            {
-                Response.Redirect("~/User/Login.aspx");
-            }
-            else
-            {
-                username.Text="Welcome "+HttpContext.Current.Session["username"].ToString();
-            }
+            //if (HttpContext.Current.Session["UserName"] == null)
+            //{
+            //    Response.Redirect("~/User/Login.aspx");
+            //}
+           
         }
     }
 }

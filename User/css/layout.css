@@ -18,6 +18,9 @@ body::-webkit-scrollbar{
     display: none;
 }
 
+.nav2{
+    display:none;
+}
 nav{
     width: 100vw;
     display: flex;
@@ -25,6 +28,9 @@ nav{
     align-items: center;
     padding: 10px 30px;
     border-bottom: 1px solid rgb(134, 134, 134,0.5);
+    position: fixed;
+    z-index: 999;
+    background-color: white;
 }
 nav .logo{
     display: flex;
@@ -89,7 +95,7 @@ nav .search .SearchBox{
 
 nav .search .src-icon{
     cursor: pointer;
-    background-color: rgb(252, 200, 176);
+    background-color: var(--primary-color);
     padding: 10px;
     border-radius: 50%;
 }
@@ -98,29 +104,51 @@ nav .icons{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 10%;
+    width: 20%;
 }
+nav .icons p,
 nav .icons i{
     cursor: pointer;
     font-size: 20px;
     font-weight: 600;
+    margin: 0;
     
 }
 nav .icons i sup{
-    background-color: black;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
     padding: 2px;
     border-radius: 50%;
     font-size: 10px;
 }
 
+/*css form second nav*/
 
+.nav2{
+    flex-direction:column;
+}
+.f-nav{
+    display:flex;
+    justify-content:space-between;
+    align-content:center;
+    width: 100%;
+}
 
+.nav2 .search {
+    width: 100%;
+}
 
+.nav2 .icons{
+    width: 40%;
+}
 /* footer styling  */
-footer{
-    background-color: rgb(20, 18, 18);
+footer {
+    background-color: var(--black);
     padding: 50px;
+}
+
+footer a{
+    color: white;
 }
 footer .contain{
     display: flex;
@@ -135,7 +163,7 @@ footer .contain .first span{
     display: flex;
     justify-content:center;
     align-items: center;
-    color: white;
+    color: var(--white);
     font-weight: bold;
     flex-direction: column;
 }
@@ -147,7 +175,7 @@ footer .contain .first button{
     font-size: 20px;
 }
 footer .contain .first p{
-    color: white;
+    color: var(--white);
     font-weight: bold;
     text-align: center;
 }
@@ -181,6 +209,16 @@ footer .contain .sec p i{
 
 
 
+
+@media (max-width:1000px) {
+    .nav1{
+        display: none;
+    }
+    .nav2{
+        display: flex;
+    }
+}
+
 @media(max-width:850px){
     footer .contain {
         flex-wrap: wrap;
@@ -191,6 +229,24 @@ footer .contain .sec p i{
     footer .contain .sec p {
         font-size: 13px;
     }
+
+
+}
+
+@media (max-width:600px){
+    .nav2{
+        padding: 10px;
+    }
+    .nav2 .logo  img{
+        width: 100px ;
+    }
+    nav .logo .icon span{
+        display: none;
+    }
+    nav .icons p,
+    nav .icons i{
+        font-size: 15px;
+}
 }
 
 @media (max-width:520px){
