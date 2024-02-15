@@ -1,0 +1,302 @@
+﻿/* font-family: 'Noto Serif'; */
+/* font-family: 'Public Sans', sans-serif; */
+/* font-family: 'Raleway', sans-serif; */
+.pview {
+    padding: 50px;
+}
+
+.pview .row .left img{
+    width: 100%;
+    height: 100%;
+}
+
+.pview .row .right .head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pview .row .right .head h1{
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Public Sans', sans-serif; 
+}
+
+.pview .row .right .head a{
+    color: black;
+    background-color: rgb(197, 196, 196);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    margin: auto;
+    text-align: center;
+}
+
+.writeReview .rating .star,
+.pview .row .right .review{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /* width: 30%; */
+}
+
+.writeReview .rating .star p i,
+.pview .row .right .review p i {
+    color: var(--secondary-color);
+    
+}
+
+.pview .row .right  .instock{
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+    background-color: var(--primary-color);
+    padding: 1px 5px;
+    border: 0.5px solid rgb(12, 12, 12,0.1);
+    width: 100px;
+    text-align: center;
+}
+
+.pview .row .right h2{
+    font-family: 'Public Sans', sans-serif; 
+    font-weight: 500;
+    font-weight: 20px;
+}
+
+.pview .row .right .qty{
+    display: flex;
+    align-items: center;
+}
+
+.pview .row .right .qty .box{
+    padding: 10px;
+    border-radius: 20px;
+    border: 3px solid var(--secondary-color);
+    margin-left: 10px;
+}
+.pview .row .right .qty .box span{
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.pview .row .right .btns{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px ;
+}
+.pview .row .right .btns button{
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+.pview .row .right .btns button:first-child{
+    background-color: var(--primary-color);
+}
+.pview .row .right .btns button:last-child{
+    background-color: var(--secondary-color);
+}
+.pview .row .right .btns button:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.work{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.work .contain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-right: 20px;
+}
+.work .contain .icon{
+    border: 4px solid var(--secondary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 30px;
+}
+.work .contain .icon i{
+    color: var(--secondary-color);
+    font-size: 15px;
+    
+}
+.work .contain .text{
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    flex-direction: column;
+    color: var(--secondary-color);
+}
+.work .contain .text span{
+    font-size: 10px;
+}
+.work .contain .text p{
+    font-size: 13px;
+    font-weight: bold;
+    width: 100px;
+    line-height: 14px;
+}
+
+.userReviw{
+    background-color: rgba(255, 255, 255, 0.966);
+    border-radius: 10px;
+    box-shadow: inset 0 0 3px black;
+    padding: 10px;
+    height: 400px;
+    overflow-y:scroll ;
+}
+.userReviw h2{
+    font-size: 30px;
+    text-align: center;
+}
+.userReviw .component{
+
+    padding:2px 10px;
+   
+}
+.userReviw .component h2{
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+.userReviw .component .info span{
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+
+.writeReview{
+    margin: 50px;
+    padding: 20px;
+    border-top: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
+
+
+.writeReview .rating .star p{
+    color: var(--secondary-color);
+}
+
+.writeReview .rating .bars .bar{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /* width: 50%; */
+    margin: 10px 0;
+}
+.writeReview .rating .bars .bar span{
+    font-weight: bold;
+    margin-right: 4px;
+}
+.writeReview .rating .bars .bar span:nth-child(2){
+    border-radius: 10px;
+    overflow: hidden;
+    height: 17px;
+}
+.writeReview .rating .bars .bar progress{
+    background-color: white;
+    height: 100%;
+}
+.writeReview .rating .bars .bar progress::-webkit-progress-value{
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+}
+
+.star-rating {
+    display: inline-block;
+  }
+  
+  .star-rating input {
+    display: none;
+  }
+  
+  .star-rating label {
+    float: right;
+    cursor: pointer;
+    color: grey;
+    font-size: 25px;
+  }
+  
+  /* .star-rating label:before {
+    content: '★';
+    margin-right: 5px;
+  } */
+  
+  .star-rating input:checked ~ label {
+    color: var(--secondary-color);
+  }
+  
+  .right .form{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .right .form .form-div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding-right: 20px;
+  }
+  .right .form .form-div label{
+    color: var(--secondary-color);
+  }
+  .right .form .form-div input,
+  .right .form .form-div textarea{
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px;
+  }
+ 
+  .recomend .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 50px; */
+    flex-wrap: wrap;
+  }
+   .recomend .wrapper .product__item{
+    margin: 0 20px;
+  }
+
+
+  @media (max-width:600px){
+    .pview {
+        padding: 50px 10px;
+    }
+    .pview .row .right .head a {
+        background-color: transparent;
+    }
+    .writeReview {
+        margin: 0;
+    }
+  }
+
+  @media (max-width:400px){
+    .writeReview {
+        padding: 5px;
+    }
+  }
+

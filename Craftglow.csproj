@@ -47,6 +47,9 @@
       <HintPath>packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -75,6 +78,7 @@
     <Content Include="Assets\user\about-image.jpg" />
     <Content Include="Assets\user\banner-gold-jewellery-2022.jpg" />
     <Content Include="Assets\user\banner-img1.jpg" />
+    <Content Include="Assets\user\banner\Arri_Embroidery_Banner_2-01.jpg" />
     <Content Include="Assets\user\brass.jpg" />
     <Content Include="Assets\user\category\Aari_embroidery.png" />
     <Content Include="Assets\user\category\Shwals-Wraps.jpg" />
@@ -89,15 +93,32 @@
     <Content Include="Assets\user\products\dsc05079.jpg" />
     <Content Include="Assets\user\products\Kashish_Kangan-03.jpg" />
     <Content Include="Assets\user\products\Nadeya_shibori_saree.png" />
+    <Content Include="Assets\user\products\view1.jpg" />
+    <Content Include="Assets\user\products\view2.jpg" />
+    <Content Include="Assets\user\products\view3.jpg" />
+    <Content Include="Assets\user\products\view4.jpg" />
     <Content Include="Assets\user\rebrand-login-ill.svg" />
     <Content Include="Assets\user\vase-pottery-decoration-wood-craft-table-cultures-nature-clay-generated-by-ai-free-photo.jpg" />
     <Content Include="User\About.aspx" />
+    <Content Include="User\css\addtocart.css" />
+    <Content Include="User\css\category.css" />
     <Content Include="User\css\layout.css" />
     <Content Include="User\css\Login.css" />
+    <Content Include="User\css\view.css" />
+    <Content Include="User\css\wishlist.css" />
     <Content Include="User\Home.aspx" />
+    <Content Include="User\javascript\addtocart.js" />
+    <Content Include="User\javascript\category.js" />
+    <Content Include="User\javascript\Home.js" />
+    <Content Include="User\javascript\view.js" />
+    <Content Include="User\javascript\wishlist.js" />
     <Content Include="User\Login.aspx" />
     <Content Include="User\Profile.aspx" />
     <Content Include="User\Signup.aspx" />
+    <Content Include="User\ProductView.aspx" />
+    <Content Include="User\Category.aspx" />
+    <Content Include="User\Addtocart.aspx" />
+    <Content Include="User\Wishlist.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +172,34 @@
     </Compile>
     <Compile Include="User\Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ProductView.aspx.cs">
+      <DependentUpon>ProductView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ProductView.aspx.designer.cs">
+      <DependentUpon>ProductView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Addtocart.aspx.cs">
+      <DependentUpon>Addtocart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Addtocart.aspx.designer.cs">
+      <DependentUpon>Addtocart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Wishlist.aspx.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Wishlist.aspx.designer.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

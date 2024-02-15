@@ -3,77 +3,21 @@
     <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
         <link rel="stylesheet" href="css/home.css">
+
+       <script src="javascript/Home.js"></script>
     </asp:Content>
+
+
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
         <div class="home">
             <div class="banner">
                 <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="text">
-                                <h1>Handcrafted Rugs</h1>
-                                <p>THE ADORN YOUR FLOOR WITH TIMELESS CHARM</p>
-                                <!-- <a href="#" class="ban-btn">Shop Now</a> -->
-                            </div>
-                            <a href="#">
-                                <img src="../Assets/user/carpetBr.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="text">
-                                <h1>MARBLES COLLECTIVITY</h1>
-                                <p>AVAILABLE IN STOCK</p>
-                                <!-- <a href="#" class="ban-btn">Shop Now</a> -->
-                            </div>
-                            <a href="#">
-                                <img src="../Assets/user/marblePot.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="text">
-                                <h1>Handcrafted Brass </h1>
-                                <p>EXPLORE THE ASTHETIC ALLURE OF</p>
-                                <!-- <a href="#" class="ban-btn">Shop Now</a> -->
-                            </div>
-                            <a href="#">
-                                <img src="../Assets/user/brass.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="text">
-                                <h1>INDULGE OF THE SPLENDER OF</h1>
-                                <p>Handcrafte shawles</p>
-                                <!-- <a href="#" class="ban-btn">Shop Now</a> -->
-                            </div>
-                            <a href="#">
-                                <img src="../Assets/user/shawles.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="text">
-                                <h1>Articial Hand Printed Pieces</h1>
-                                <p>BEYOND BEAUTIFULL</p>
-                                <!-- <a href="#" class="ban-btn">Shop Now</a> -->
-                            </div>
-                            <a href="#">
-                                <img src="../Assets/user/vase-pottery-decoration-wood-craft-table-cultures-nature-clay-generated-by-ai-free-photo.jpg"
-                                    alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="text">
-                                <h1>Feminine Finds </h1>
-                                <p>HANDCRAFTED JWELLARY</p>
-                                <!-- <a href="#" class="ban-btn">Shop Now</a> -->
-                            </div>
-                            <a href="#">
-                                <img src="../Assets/user/jwellery.jpg" alt="">
-                            </a>
-                        </div>
+                    <div class="swiper-wrapper" id="banner-contain">
                     </div>
                     <div class="swiper-button-next arrow"></div>
                     <div class="swiper-button-prev arrow"></div>
+
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
@@ -157,17 +101,7 @@
 
                             </div>
                             <h5><i class="fa-solid fa-indian-rupee-sign"></i>1083</h5>
-                            <!-- <div class="product__color__select">
-                    <label for="pc-1">
-                        <input type="radio" id="pc-1">
-                    </label>
-                    <label class="active black" for="pc-2">
-                        <input type="radio" id="pc-2">
-                    </label>
-                    <label class="grey" for="pc-3">
-                        <input type="radio" id="pc-3">
-                    </label>
-                </div> -->
+                         
                         </div>
                     </div>
                     <!-- </a> -->
@@ -292,59 +226,59 @@
                 <p>Check out our complete range of craft works</p>
                 <div class="wrapper">
                     <a href="#">
-                    <div class="category">
-                        <img src="../Assets/user/category/Aari_embroidery.png" alt="">
-                        <span>Asri Embroidery</span>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="category">
-                        <img src="../Assets/user/category/Aari_embroidery.png" alt="">
-                        <span>Asri Embroidery</span>
-                    </div>
-                </a>
+                        <div class="category">
+                            <img src="../Assets/user/category/Aari_embroidery.png" alt="">
+                            <span>Asri Embroidery</span>
+                        </div>
+                    </a>
                     <a href="#">
-                    <div class="category">
-                        <img src="../Assets/user/category/Aari_embroidery.png" alt="">
-                        <span>Asri Embroidery</span>
-                    </div>
-                </a>
+                        <div class="category">
+                            <img src="../Assets/user/category/Aari_embroidery.png" alt="">
+                            <span>Asri Embroidery</span>
+                        </div>
+                    </a>
                     <a href="#">
-                    <div class="category">
-                        <img src="../Assets/user/category/Aari_embroidery.png" alt="">
-                        <span>Asri Embroidery</span>
-                    </div>
-                </a>
+                        <div class="category">
+                            <img src="../Assets/user/category/Aari_embroidery.png" alt="">
+                            <span>Asri Embroidery</span>
+                        </div>
+                    </a>
                     <a href="#">
-                    <div class="category">
-                        <img src="../Assets/user/category/Aari_embroidery.png" alt="">
-                        <span>Asri Embroidery</span>
-                    </div>
-                </a>
+                        <div class="category">
+                            <img src="../Assets/user/category/Aari_embroidery.png" alt="">
+                            <span>Asri Embroidery</span>
+                        </div>
+                    </a>
                     <a href="#">
-                    <div class="category">
-                        <img src="../Assets/user/category/Aari_embroidery.png" alt="">
-                        <span>Asri Embroidery</span>
-                    </div>
-                </a>
+                        <div class="category">
+                            <img src="../Assets/user/category/Aari_embroidery.png" alt="">
+                            <span>Asri Embroidery</span>
+                        </div>
+                    </a>
                     <a href="#">
-                    <div class="category">
-                        <img src="../Assets/user/category/Aari_embroidery.png" alt="">
-                        <span>Asri Embroidery</span>
-                    </div>
-                </a>
+                        <div class="category">
+                            <img src="../Assets/user/category/Aari_embroidery.png" alt="">
+                            <span>Asri Embroidery</span>
+                        </div>
+                    </a>
                     <a href="#">
-                    <div class="category">
-                        <img src="../Assets/user/category/Aari_embroidery.png" alt="">
-                        <span>Asri Embroidery</span>
-                    </div>
-                </a>
+                        <div class="category">
+                            <img src="../Assets/user/category/Aari_embroidery.png" alt="">
+                            <span>Asri Embroidery</span>
+                        </div>
+                    </a>
                     <a href="#">
-                    <div class="category">
-                        <img src="../Assets/user/category/Aari_embroidery.png" alt="">
-                        <span>Asri Embroidery</span>
-                    </div>
-                </a>
+                        <div class="category">
+                            <img src="../Assets/user/category/Aari_embroidery.png" alt="">
+                            <span>Asri Embroidery</span>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="category">
+                            <img src="../Assets/user/category/Aari_embroidery.png" alt="">
+                            <span>Asri Embroidery</span>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -378,64 +312,80 @@
                 <h1>Our Honest Customer Rivew</h1>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide content">
-                        <div class="img">
-                            <img src="../Assets/user/products/Nadeya_shibori_saree.png" alt="">
-                        </div>
-                        <div class="text">
-                            <div class="review">
-                                <i class="fa-solid fa-quote-left"></i>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magni molestias magnam eius a aspernatur ad, voluptates aperiam non modi molestiae deserunt nesciunt distinctio nostrum tempore inventore dicta, odio accusamus officiis eum sequi! Magni enim itaque quam in illo nobis iusto provident voluptate modi saepe, earum est nemo expedita nam.
+                        <div class="swiper-slide content">
+                            <div class="img">
+                                <img src="../Assets/user/products/Nadeya_shibori_saree.png" alt="">
                             </div>
-                            <h2>Sagar Mandal</h2>
-                            <p>Jajpur</p>
-                        </div>
-                      </div>
-                      <div class="swiper-slide content">
-                        <div class="img">
-                            <img src="../Assets/user/products/Nadeya_shibori_saree.png" alt="">
-                        </div>
-                        <div class="text">
-                            <div class="review">
-                                <i class="fa-solid fa-quote-left"></i>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magni molestias magnam eius a aspernatur ad, voluptates aperiam non modi molestiae deserunt nesciunt distinctio nostrum tempore inventore dicta, odio accusamus officiis eum sequi! Magni enim itaque quam in illo nobis iusto provident voluptate modi saepe, earum est nemo expedita nam.
+                            <div class="text">
+                                <div class="review">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magni molestias
+                                    magnam eius a aspernatur ad, voluptates aperiam non modi molestiae deserunt nesciunt
+                                    distinctio nostrum tempore inventore dicta, odio accusamus officiis eum sequi! Magni
+                                    enim itaque quam in illo nobis iusto provident voluptate modi saepe, earum est nemo
+                                    expedita nam.
+                                </div>
+                                <h2>Sagar Mandal</h2>
+                                <p>Jajpur</p>
                             </div>
-                            <h2>Sagar Mandal</h2>
-                            <p>Jajpur</p>
                         </div>
-                      </div>
-                      <div class="swiper-slide content">
-                        <div class="img">
-                            <img src="../Assets/user/products/Nadeya_shibori_saree.png" alt="">
-                        </div>
-                        <div class="text">
-                            <div class="review">
-                                <i class="fa-solid fa-quote-left"></i>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magni molestias magnam eius a aspernatur ad, voluptates aperiam non modi molestiae deserunt nesciunt distinctio nostrum tempore inventore dicta, odio accusamus officiis eum sequi! Magni enim itaque quam in illo nobis iusto provident voluptate modi saepe, earum est nemo expedita nam.
+                        <div class="swiper-slide content">
+                            <div class="img">
+                                <img src="../Assets/user/products/Nadeya_shibori_saree.png" alt="">
                             </div>
-                            <h2>Sagar Mandal</h2>
-                            <p>Jajpur</p>
-                        </div>
-                      </div>
-                      <div class="swiper-slide content">
-                        <div class="img">
-                            <img src="../Assets/user/products/Nadeya_shibori_saree.png" alt="">
-                        </div>
-                        <div class="text">
-                            <div class="review">
-                                <i class="fa-solid fa-quote-left"></i>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magni molestias magnam eius a aspernatur ad, voluptates aperiam non modi molestiae deserunt nesciunt distinctio nostrum tempore inventore dicta, odio accusamus officiis eum sequi! Magni enim itaque quam in illo nobis iusto provident voluptate modi saepe, earum est nemo expedita nam.
+                            <div class="text">
+                                <div class="review">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magni molestias
+                                    magnam eius a aspernatur ad, voluptates aperiam non modi molestiae deserunt nesciunt
+                                    distinctio nostrum tempore inventore dicta, odio accusamus officiis eum sequi! Magni
+                                    enim itaque quam in illo nobis iusto provident voluptate modi saepe, earum est nemo
+                                    expedita nam.
+                                </div>
+                                <h2>Sagar Mandal</h2>
+                                <p>Jajpur</p>
                             </div>
-                            <h2>Sagar Mandal</h2>
-                            <p>Jajpur</p>
                         </div>
-                      </div>
-                     
+                        <div class="swiper-slide content">
+                            <div class="img">
+                                <img src="../Assets/user/products/Nadeya_shibori_saree.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="review">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magni molestias
+                                    magnam eius a aspernatur ad, voluptates aperiam non modi molestiae deserunt nesciunt
+                                    distinctio nostrum tempore inventore dicta, odio accusamus officiis eum sequi! Magni
+                                    enim itaque quam in illo nobis iusto provident voluptate modi saepe, earum est nemo
+                                    expedita nam.
+                                </div>
+                                <h2>Sagar Mandal</h2>
+                                <p>Jajpur</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide content">
+                            <div class="img">
+                                <img src="../Assets/user/products/Nadeya_shibori_saree.png" alt="">
+                            </div>
+                            <div class="text">
+                                <div class="review">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magni molestias
+                                    magnam eius a aspernatur ad, voluptates aperiam non modi molestiae deserunt nesciunt
+                                    distinctio nostrum tempore inventore dicta, odio accusamus officiis eum sequi! Magni
+                                    enim itaque quam in illo nobis iusto provident voluptate modi saepe, earum est nemo
+                                    expedita nam.
+                                </div>
+                                <h2>Sagar Mandal</h2>
+                                <p>Jajpur</p>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="swiper-button-next arrow"></div>
                     <div class="swiper-button-prev arrow"></div>
                     <div class="swiper-pagination"></div>
-                  </div>
+                </div>
             </div>
 
 

@@ -11,7 +11,7 @@ namespace Craftglow.User
 {
 
 
-    public partial class Home
+    public partial class ProductView
     {
     }
 }

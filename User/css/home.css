@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Public+Sans:wght@300;500&family=Raleway&display=swap');
 
-/* font-family: 'Noto Serif'; */
-/* font-family: 'Public Sans', sans-serif; */
+
+
 
 a{
   color: black;
@@ -187,9 +186,9 @@ a{
   margin: 20px;
 } 
 
-.categories .wrapper .category img{
-  /* width: 12vw; */
-}
+/* .categories .wrapper .category img{
+  width: 12vw;
+} */
 
 .categories .wrapper .category span{
   font-size:20px;

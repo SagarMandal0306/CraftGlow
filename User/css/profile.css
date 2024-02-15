@@ -1,0 +1,58 @@
+﻿.profile{
+    background-color: rgb(199, 199, 199,0.3);
+    height: 100vh;
+}
+
+.profile .box{
+    background-color: white;
+}
+
+.profile .right,
+.profile .left {
+    margin: 30px 20px;
+}
+
+.profile .right .box,
+.profile .left .box{
+    height: 100%;
+    padding: 30px;
+}
+.profile .left .box ul li{
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(182, 182, 182,0.4);
+}
+.profile .left .box ul li i{
+    margin-right: 10px;
+    color: var(--secondary-color);
+   
+}
+.profile .right .box {
+    display: flex;
+    justify-content:left;
+    align-items: flex-start;
+}
+.profile .right .box .logo{
+    background:linear-gradient(to left,deeppink,var(--secondary-color));
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.profile .right .box .logo h1{
+    color: white;
+}
+.profile .right .box .text p span{
+    font-size: 20px;
+    font-weight: 600;
+}
+.profile .right .box .text p i{
+    color: var(--secondary-color);
+}

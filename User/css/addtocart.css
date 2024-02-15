@@ -1,0 +1,104 @@
+﻿/* font-family: 'Noto Serif'; */
+/* font-family: 'Public Sans', sans-serif; */
+/* font-family: 'Raleway', sans-serif; */
+p{
+    margin: 0;
+    font-family: 'Raleway', sans-serif; 
+    font-weight: bold;
+}
+.box{
+    border: 1px solid rgb(114, 114, 114,0.4);
+}
+
+.box h1{
+    background-color: var(--primary-color);
+    padding: 10px;
+    font-family: 'Noto Serif'; 
+    font-size: 25px;
+    
+}
+.box .contain{
+    padding: 0 10px;
+}
+.box .contain div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid rgb(114, 114, 114,0.4);
+}
+.btn-proceed{
+    padding: 20px;
+    width: 100%;
+    margin-top:10px ;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    border-radius: 30px;
+}
+
+.cart-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px;
+    border: 1px solid rgb(150, 148, 148,0.4);
+    border-left: 0;
+    border-right: 0;
+}
+
+.cart-box .left{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.cart-box .left img{
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+}
+.cart-box .left .text h1{
+    font-size: 20px;
+}
+.cart-box .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.qty{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.qty .box{
+    padding: 10px;
+    border-radius: 20px;
+    border: 3px solid var(--secondary-color);
+    margin-left: 10px;
+}
+
+.qty .box span{
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    user-select: none;
+}
+.cart-box .right i{
+    padding: 10px;
+    font-size: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.cart-box .right i:hover{
+    background-color: black;
+    color: white;
+}
+
+

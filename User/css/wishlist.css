@@ -1,0 +1,11 @@
+﻿.wishlist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+.text-center{
+    font-family: 'Public Sans', sans-serif; 
+}
