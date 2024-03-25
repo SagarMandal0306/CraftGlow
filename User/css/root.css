@@ -8,6 +8,9 @@
     --black: #131313;
     --white:#fff;
 }
+a{
+	text-decoration:none;
+}
 
 
 .main-div{

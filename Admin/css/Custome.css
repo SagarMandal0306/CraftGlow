@@ -1,0 +1,39 @@
+﻿.error{
+   font-size:13px;
+}
+.category_header {
+    background: #009CFF;
+    color: white;
+}
+th{
+    text-align:center;
+}
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 5px;
+}
+.update_btn {
+    color: white;
+    background-color: #2ea82e;
+}
+.update_btn:hover{
+    color:white;
+    background-color:grey;
+}
+.productimg {
+    display: flex;
+    justify-content: center;
+}
+.productimg img {
+    width: 50px;
+}
+.productList {
+    min-width: 100%;
+}
+.form-control:read-only {
+     background-color: #fff !important;    
+}
+.SelectedProductImage{
+    width:55px;
+    font-size:8px;
+}

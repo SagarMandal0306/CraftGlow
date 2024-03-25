@@ -15,12 +15,12 @@ namespace Craftglow.User
     {
 
         /// <summary>
-        /// logout_current_user control.
+        /// logout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button logout_current_user;
+        protected global::System.Web.UI.WebControls.LinkButton logout;
     }
 }

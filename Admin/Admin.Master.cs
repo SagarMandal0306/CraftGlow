@@ -11,7 +11,30 @@ namespace Craftglow.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Page.DataBind();
+            }
         }
+
+        protected void logoutAdmin_Click(object sender, EventArgs e)
+        {
+            if (Session["Admin"] != null)
+            {
+                Session["Admin"] = null;
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+              
+                Response.Redirect("Dashboard.aspx");
+            }
+        }
+
+        protected string IsActive(string pageName)
+        {
+            return Request.Path.IndexOf(pageName, StringComparison.OrdinalIgnoreCase) >= 0 ? "active" : "";
+        }
+
     }
 }

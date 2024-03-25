@@ -11,7 +11,10 @@
                 <ul>
                     <li><i class="fa-solid fa-user"></i>My Profile</li>
                     <li><i class="fa-solid fa-clock-rotate-left"></i>Order History</li>
-                    <li><i class="fa-solid fa-right-from-bracket"></i>Logout</li>
+                    <li>
+                        <asp:LinkButton ID="logout" runat="server" OnClick="logout_Click"> <i class="fa-solid fa-right-from-bracket"></i>
+Logout</asp:LinkButton>
+                    </li>
                 </ul>
             </div>
         </div>

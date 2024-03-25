@@ -18,7 +18,8 @@ namespace Craftglow.User
             }
         }
 
-        protected void logout_current_user_Click(object sender, EventArgs e)
+
+        protected void logout_Click(object sender, EventArgs e)
         {
             HttpContext.Current.Session["UserName"] = null;
             HttpContext.Current.Session["UserEmail"] = null;

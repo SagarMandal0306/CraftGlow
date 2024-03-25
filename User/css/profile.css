@@ -56,3 +56,7 @@
 .profile .right .box .text p i{
     color: var(--secondary-color);
 }
+
+a {
+    color:black;
+}
