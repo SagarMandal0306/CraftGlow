@@ -50,5 +50,11 @@ namespace Craftglow.Admin
             cdb.Sqlquery("delete from products where product_id='" + product_id + "'");
             ReloadProducts();
         }
+
+        protected void productlist_grid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            productlist_grid.PageIndex = e.NewPageIndex;
+            ReloadProducts();
+        }
     }
 }

@@ -21,11 +21,11 @@ Logout</asp:LinkButton>
         <div class="col-md-8 right">
             <div class="box">
                 <div class="logo">
-                    <h1>S</h1>
+                    <h1 runat="server" id="FirstL"></h1>
                 </div>
                 <div class="text">
-                    <p><i class="fa-solid fa-envelope"></i>- <span>sagarmandal4000@gmail.com</span></p>
-                    <p><i class="fa-solid fa-phone"></i>- <span>9099086775</span></p>
+                    <p><i class="fa-solid fa-envelope"></i>- <span runat="server" id="Email"></span></p>
+                    <p><i class="fa-solid fa-phone"></i>- <span runat="server" id="Phone"></span></p>
                     <p><i class="fa-solid fa-location-dot"></i>- <span>jajpur,India</span></p>
                 </div>
             </div>

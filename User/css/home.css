@@ -186,9 +186,12 @@ a{
   margin: 20px;
 } 
 
-/* .categories .wrapper .category img{
+ .categories .wrapper .category img{
   width: 12vw;
-} */
+  height:12vw;
+  border-radius:50%;
+  box-shadow:0 0 10px 0;
+} 
 
 .categories .wrapper .category span{
   font-size:20px;
@@ -346,7 +349,7 @@ a{
         height: 200px;
     }
     .swiper-slide .text h1{
-        font-size: 40px; 
+        font-size: 40px !important; 
     
       }
       
@@ -375,7 +378,7 @@ a{
 
   @media (max-width:400px){
     .swiper-slide .text h1{
-        font-size: 20px; 
+        font-size: 20px !important; 
     
       }
       

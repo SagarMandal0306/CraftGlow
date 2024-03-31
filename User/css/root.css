@@ -40,12 +40,15 @@ a{
 	background-size: cover;
 	background-position: top center;
 }
+
+
 .product__item {
 	overflow: hidden;
 	margin-bottom: 40px;
     padding: 5px;
     transition: 0.4s;
     cursor: pointer;
+	width:200px;
 }
 
 .product__item:hover{
@@ -72,12 +75,13 @@ a{
 
 .product__item:hover .product__item__text a {
 	top: 22px;
-	opacity: 1;
+	opacity: 1 ;
 	visibility: visible;
 }
 
 .product__item:hover .product__item__text h6 {
 	opacity: 0;
+	width:100%;
 }
 
 .product__item:hover .product__item__text .product__color__select {
@@ -173,26 +177,28 @@ a{
 	position: absolute;
 	left: 0;
 	top: 0;
-	opacity: 0;
-	visibility: hidden;
+	opacity: 1;
+	visibility: visible;
 	-webkit-transition: all, 0.3s;
 	-o-transition: all, 0.3s;
 	transition: all, 0.3s;
 }
 
-.product__item__text h6 {
-	color: #111111;
-	font-size: 15px;
-	font-weight: 600;
-	margin-bottom: 5px;
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
-}
+	
+	.product__item__text h6 {
+		color: #111111;
+		font-size: 15px;
+		font-weight: 600;
+		margin-bottom: 5px;
+		-webkit-transition: all, 0.3s;
+		-o-transition: all, 0.3s;
+		transition: all, 0.3s;
+	}
+	
 
-.product__item__text .rating {
-	margin-bottom: 6px;
-}
+	.product__item__text .rating {
+		margin-bottom: 6px;
+	}
 
 .product__item__text .rating i {
 	font-size: 14px;

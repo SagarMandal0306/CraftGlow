@@ -100,7 +100,7 @@ namespace Craftglow.Admin
             }
 
             string imgType = Path.GetExtension(ProductImg.FileName).ToLower();
-            string[] supportedImgType = { ".jpg", ".jpeg", ".png" };
+            string[] supportedImgType = { ".jpg", ".jpeg", ".png" ,".webp"};
             if(!supportedImgType.Contains(imgType))
             {
                 product_error.Text = "Only JPG, JPEG, and PNG file formats are supported.";

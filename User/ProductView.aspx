@@ -6,12 +6,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="pview">
     <div class="row">
-        <div class="col-md-6 left mt-2">
-           <img src="../Assets/user/products/view1.jpg" alt="">
+        <div runat="server" class="col-md-6 left mt-2" id="productImage" >
+           <%--<img src="../Assets/user/products/view1.jpg" alt="">--%>
         </div>
         <div class="col-md-6 right mt-2">
             <div class="head">
-                <h1>Old-School Charpahi-Style Tray</h1>
+                <h1 runat="server" id="productName"></h1>
                 <a href="#"><i class="fa-regular fa-heart"></i></a>
             </div>
             <p class="instock">In Stock</p>
@@ -29,7 +29,7 @@
                    <p>4 Reviews</p>
                 
             </div>
-            <h2><i class="fa-solid fa-indian-rupee-sign mx-2"></i>1680</h2>
+            <h2><i class="fa-solid fa-indian-rupee-sign mx-2"></i><strong runat="server" id="price"></strong></h2>
             <hr>
             <div class="qty">
                 <span style="font-size: 20px;">Qty</span>
@@ -85,7 +85,7 @@
 
             <div class="desc">
                 <h3>Description:</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, maiores cum? Laboriosam odit corporis deserunt dignissimos explicabo assumenda beatae. Tempore ad explicabo voluptate maiores aut beatae deserunt incidunt eaque earum.</p>
+                <p runat="server" id="proDesc"></p>
             </div>
 
             <div class="userReviw">
@@ -228,109 +228,11 @@
 
     <div class="recomend">
         <h1 class="text-center">Recomendation</h1>
-    <div class="wrapper">
-        
-        <div class="product__item">
-            <div class="product__item__pic set-bg" data-setbg="../Assets/user/products/dsc02308.jpg">
-                <span class="label">New</span>
-                <ul class="product__hover">
-                    <li><a href="#" class="text-light"><i class="fa-regular fa-heart"></i></a></li>
-                    <!-- <li><a href="#"><img src="../Assets/user/products/dsc02308.jpg" alt=""> <span>Compare</span></a></li>
-        <li><a href="#"><img src="img/icon/search.png" alt=""></a></li> -->
-                </ul>
-            </div>
-            <div class="product__item__text">
-                <h6>Old-Shool-Charpahi-Style-Tray</h6>
-                <a href="#" class="add-cart">+ Add To Cart</a>
-                <div class="rating">
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-
-
-                </div>
-                <h5><i class="fa-solid fa-indian-rupee-sign"></i>1083</h5>
-             
-            </div>
-        </div>
-        <div class="product__item">
-            <div class="product__item__pic set-bg" data-setbg="../Assets/user/products/dsc02308.jpg">
-                <span class="label">New</span>
-                <ul class="product__hover">
-                    <li><a href="#" class="text-light"><i class="fa-regular fa-heart"></i></a></li>
-                    <!-- <li><a href="#"><img src="../Assets/user/products/dsc02308.jpg" alt=""> <span>Compare</span></a></li>
-        <li><a href="#"><img src="img/icon/search.png" alt=""></a></li> -->
-                </ul>
-            </div>
-            <div class="product__item__text">
-                <h6>Old-Shool-Charpahi-Style-Tray</h6>
-                <a href="#" class="add-cart">+ Add To Cart</a>
-                <div class="rating">
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-
-
-                </div>
-                <h5><i class="fa-solid fa-indian-rupee-sign"></i>1083</h5>
-             
-            </div>
-        </div>
-        <div class="product__item">
-            <div class="product__item__pic set-bg" data-setbg="../Assets/user/products/dsc02308.jpg">
-                <span class="label">New</span>
-                <ul class="product__hover">
-                    <li><a href="#" class="text-light"><i class="fa-regular fa-heart"></i></a></li>
-                    <!-- <li><a href="#"><img src="../Assets/user/products/dsc02308.jpg" alt=""> <span>Compare</span></a></li>
-        <li><a href="#"><img src="img/icon/search.png" alt=""></a></li> -->
-                </ul>
-            </div>
-            <div class="product__item__text">
-                <h6>Old-Shool-Charpahi-Style-Tray</h6>
-                <a href="#" class="add-cart">+ Add To Cart</a>
-                <div class="rating">
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-
-
-                </div>
-                <h5><i class="fa-solid fa-indian-rupee-sign"></i>1083</h5>
-             
-            </div>
-        </div>
-        <div class="product__item">
-            <div class="product__item__pic set-bg" data-setbg="../Assets/user/products/dsc02308.jpg">
-                <span class="label">New</span>
-                <ul class="product__hover">
-                    <li><a href="#" class="text-light"><i class="fa-regular fa-heart"></i></a></li>
-                    <!-- <li><a href="#"><img src="../Assets/user/products/dsc02308.jpg" alt=""> <span>Compare</span></a></li>
-        <li><a href="#"><img src="img/icon/search.png" alt=""></a></li> -->
-                </ul>
-            </div>
-            <div class="product__item__text">
-                <h6>Old-Shool-Charpahi-Style-Tray</h6>
-                <a href="#" class="add-cart">+ Add To Cart</a>
-                <div class="rating">
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-
-
-                </div>
-                <h5><i class="fa-solid fa-indian-rupee-sign"></i>1083</h5>
-             
-            </div>
-        </div>
+    <div runat="server" class="wrapper" id="productRecommend" >
     </div>
+
+
+
 </div>
     </div>
 

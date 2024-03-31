@@ -82,6 +82,10 @@
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\Profile.aspx" />
+    <Content Include="Assets\categoryImg\images %281%29.jpeg" />
+    <Content Include="Assets\categoryImg\images %282%29.jpeg" />
+    <Content Include="Assets\categoryImg\images.jpeg" />
+    <Content Include="Assets\categoryImg\istockphoto-1304422715-612x612.jpg" />
     <Content Include="Assets\icons\menu-02-svgrepo-com.svg" />
     <Content Include="Assets\user\227729.jpg" />
     <Content Include="Assets\user\about-image.jpg" />
@@ -266,6 +270,7 @@
     <None Include=".editorconfig" />
     <Content Include="Assets\user\loom-bracelets-on-hand-little-260nw-2175441471.webp" />
     <Content Include="Assets\user\Lot_166_Dhokra_Shopify_home_page_banner_5f494553-7da3-48f7-afba-b7ce52d46540.webp" />
+    <Content Include="Assets\categoryImg\Toys.webp" />
     <None Include="packages.config" />
     <Content Include="User\User.Master" />
     <None Include="Web.Debug.config">

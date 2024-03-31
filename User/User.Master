@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="../Assets/user/logo.png" />
-    
+     <link href="css/Loader.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
     <link
@@ -32,40 +32,37 @@
                         <div class="icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="../Assets/icons/menu-02-svgrepo-com.svg" alt="" />
                             <span>categories</span>
-                            <%--<i class="fa-solid fa-circle-xmark" style="display:none"></i>--%>
+                            
                         </div>
 
-                        <%--<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown button
-                        </button>--%>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Paper FLower</a></li>
-                            <li><a class="dropdown-item" href="#">Leater Work</a></li>
-                            <li><a class="dropdown-item" href="#">Embroidery</a></li>
-                            <li><a class="dropdown-item" href="#">Candles</a></li>
-                            <li><a class="dropdown-item" href="#">Knitting</a></li>
-                            <li><a class="dropdown-item" href="#">Origami</a></li>
-                            <li><a class="dropdown-item" href="#">Carpentry</a></li>
-                            <li><a class="dropdown-item" href="#">Chrocet</a></li>
-                            <li><a class="dropdown-item" href="#">Glass Art</a></li>
+                      
+                        <ul class="dropdown-menu d-category" aria-labelledby="dropdownMenuButton1" id="">
+                         <li><a class="dropdown-item" href="Category.aspx?type=all" >All</a></li>
                         </ul>
+                      
                     </div>
                 </div>
                 <div class="search">
 
-                    <asp:TextBox runat="server" ID="SearchBox" CssClass="SearchBox" Placeholder="Search Products..." />
-                    <i class="fa-solid fa-magnifying-glass src-icon"></i>
+                    <%--<asp:TextBox runat="server" ID="SearchBox" CssClass="SearchBox" Placeholder="Search Products..." />--%>
+                    <input type="text" class="SearchBox" placeholder="Search Products..." id="search1"/>
+                    <i class="fa-solid fa-magnifying-glass src-icon" onclick="searchProduct()"></i>
 
                 </div>
                 <div class="icons">
-                    <% if (HttpContext.Current.Session["Username"] != null)
-                        { %>
-                    <p runat="server" id="P2" class="wc-msg"><%= HttpContext.Current.Session["Username"].ToString().ToUpper() %></p>
-                    <%}
-                        else
-                        { %>
-                    <p runat="server" id="P1" class="wc-msg">Guest</p>
-                    <%} %>
+                    <%
+                        string username = HttpContext.Current.Session["Username"]?.ToString(); // Ensure username is not null
+                       if(username != null)
+            {%>
+                        <p runat="server" id="user" class="wc-msg"></p>
+           <% }
+               else
+               { %>
+                    <p runat="server" id="P5" class="wc-msg">Guest</p>
+                    <%
+                    } %>
+
+
                     <a href="Profile.aspx" class="icon-link"><i class="fa-solid fa-user"></i></a>
                     <a href="Wishlist.aspx" class="icon-link"><i class="fa-regular fa-heart"></i></a>
                     <a href="Addtocart.aspx" class="icon-link"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -85,16 +82,8 @@
                             <span>categories</span>
                         </div>
 
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                            <li><a class="dropdown-item" href="#">Paper FLower</a></li>
-                            <li><a class="dropdown-item" href="#">Leater Work</a></li>
-                            <li><a class="dropdown-item" href="#">Embroidery</a></li>
-                            <li><a class="dropdown-item" href="#">Candles</a></li>
-                            <li><a class="dropdown-item" href="#">Knitting</a></li>
-                            <li><a class="dropdown-item" href="#">Origami</a></li>
-                            <li><a class="dropdown-item" href="#">Carpentry</a></li>
-                            <li><a class="dropdown-item" href="#">Chrocet</a></li>
-                            <li><a class="dropdown-item" href="#">Glass Art</a></li>
+                        <ul class="dropdown-menu d-category" aria-labelledby="dropdownMenuButton2" id="">
+                           
                         </ul>
                     </div>
                 </div>
@@ -117,8 +106,9 @@
 
                 <div class="search">
 
-    <asp:TextBox runat="server" ID="TextBox1" CssClass="SearchBox" Placeholder="Search Products..." />
-    <i class="fa-solid fa-magnifying-glass src-icon"></i>
+      <%--<asp:TextBox runat="server" ID="SearchBox" CssClass="SearchBox" Placeholder="Search Products..." />--%>
+  <input type="text" class="SearchBox" placeholder="Search Products..." id="search2"/>
+  <i class="fa-solid fa-magnifying-glass src-icon"  onclick="searchProducts()"></i>
 
 </div>
 
@@ -202,5 +192,41 @@
         }
     });
 </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                url: "Home.aspx/GetCategory",
+                contentType: "application/json; charset=utf-8",
+                success: function (res) {
+                    let data = JSON.parse(res.d);
+                    let dropdownlist = $('.d-category');
+                    $.each(data.Table, function (index, item) {
+                        let listitem = $(' <li></li>');
+                        listitem.html(`<a class="dropdown-item" href="Category.aspx?id=${item.Id}">${item.category_name}</a>`);
+                        dropdownlist.append(listitem);
+                    })
+                }
+            })
+        })
+    </script>
+
+    <script>
+           
+          
+        function searchProduct() {
+            let query = document.querySelector("#search1");
+            location.href = `Category.aspx?query=${query.value}`
+                }
+                
+        function searchProducts() {
+            let query = document.querySelector("#search2");
+            location.href = `Category.aspx?query=${query.value}`
+                }
+            
+    
+
+    </script>
 </body>
 </html>
