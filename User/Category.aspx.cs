@@ -12,11 +12,17 @@ namespace Craftglow.User
     public partial class Category : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        { 
+
             GetProducts();
             GetBannerData();
             GetSearchedProducts();
+            allProducts();
 
+        }
+
+        protected void allProducts()
+        {
             if (Request.QueryString["type"] != null)
             {
                 Connectiondb cdb = new Connectiondb();
@@ -36,20 +42,24 @@ namespace Craftglow.User
                             string name = row["product_name"].ToString().Substring(0, 10);
                             string price = row["price"].ToString();
                             string Id = row["Id"].ToString();
+                            string product_id = row["product_id"].ToString();
+                            string cart = CheckCartList(Id, product_id);
+                            string wish = checkWishList(product_id);
+
                             string html = $@"
     <div class=""product__item"" >
-                          <a href=""ProductView.aspx?id={Id}"">
+                          <a href=""ProductView.aspx?id={product_id}"">
         <div class=""product__item__pic set-bg"" data-setbg=""../Assets/productImgs/{img}"">
             
             <ul class=""product__hover"">
-                <li><i class=""fa-regular fa-heart""></i></li>
+               {wish}
             </ul>
         </div>
 </a>
         
         <div class=""product__item__text"">
             <h6>{name}...</h6>
-            <a href=""#"" class=""add-cart"">+ Add To Cart</a>
+            {cart}
             <div class=""rating"">
                 <i class=""fa-regular fa-star""></i>
                 <i class=""fa-regular fa-star""></i>
@@ -69,7 +79,7 @@ namespace Craftglow.User
                         }
                     }
                 }
-                    }
+            }
 
         }
 
@@ -101,41 +111,46 @@ namespace Craftglow.User
                             string name = row["product_name"].ToString().Substring(0, 10);
                             string price = row["price"].ToString();
                             string Id = row["Id"].ToString();
+                            string product_id = row["product_id"].ToString();
+                            string cart = CheckCartList(Id, product_id);
+                            string wish = checkWishList(product_id);
                             string html = $@"
-    <div class=""product__item"" >
-                          <a href=""ProductView.aspx?id={Id}"">
-        <div class=""product__item__pic set-bg"" data-setbg=""../Assets/productImgs/{img}"">
+                                <div class=""product__item"" >
+                                                      <a href=""ProductView.aspx?id={product_id}"">
+                                    <div class=""product__item__pic set-bg"" data-setbg=""../Assets/productImgs/{img}"">
             
-            <ul class=""product__hover"">
-                <li><i class=""fa-regular fa-heart""></i></li>
-            </ul>
-        </div>
-</a>
+                                        <ul class=""product__hover"">
+                                           {wish}
+                                        </ul>
+                                    </div>
+                            </a>
         
-        <div class=""product__item__text"">
-            <h6>{name}...</h6>
-            <a href=""#"" class=""add-cart"">+ Add To Cart</a>
-            <div class=""rating"">
-                <i class=""fa-regular fa-star""></i>
-                <i class=""fa-regular fa-star""></i>
-                <i class=""fa-regular fa-star""></i>
-                <i class=""fa-regular fa-star""></i>
-                <i class=""fa-regular fa-star""></i>
-            </div>
-            <h5><i class=""fa-solid fa-indian-rupee-sign""></i>{price}</h5>
-        </div>
-    </div>
+                                    <div class=""product__item__text"">
+                                        <h6>{name}...</h6>
+                                        {cart}
+                                        <div class=""rating"">
+                                            <i class=""fa-regular fa-star""></i>
+                                            <i class=""fa-regular fa-star""></i>
+                                            <i class=""fa-regular fa-star""></i>
+                                            <i class=""fa-regular fa-star""></i>
+                                            <i class=""fa-regular fa-star""></i>
+                                        </div>
+                                        <h5><i class=""fa-solid fa-indian-rupee-sign""></i>{price}</h5>
+                                    </div>
+                                </div>
 
 
-";
+                                ";
 
 
                             categoryProducts.InnerHtml += html;
                         }
                     }
                 }
+
+
             }
-            
+
         }
 
         protected void GetBannerData()
@@ -150,9 +165,9 @@ namespace Craftglow.User
         }
         protected void GetSearchedProducts()
         {
-            categoryName.InnerText = "Search Product";
             if (Request.QueryString["query"] != null)
             {
+                categoryName.InnerText = "Search Product";
                 string query = Request.QueryString["query"].ToString();
                 Connectiondb cds = new Connectiondb();
                 cds.Sqlquery("select * from products where keywords like '%" + query + "%' ");
@@ -167,24 +182,29 @@ namespace Craftglow.User
 
                         if (row["product_image"] != DBNull.Value && row["product_name"] != DBNull.Value && row["price"] != DBNull.Value)
                         {
-                            string img = row["product_image"].ToString();
+                            string img = row["product_image"]
+                                .ToString();
                             string name = row["product_name"].ToString().Substring(0, 10);
                             string price = row["price"].ToString();
                             string Id = row["Id"].ToString();
+                            string product_id = row["product_id"].ToString();
+                            string cart = CheckCartList(Id, product_id);
+                            string wish = checkWishList(product_id);
                             string html = $@"
     <div class=""product__item"" >
-                          <a href=""ProductView.aspx?id={Id}"">
+                          <a href=""ProductView.aspx?id={product_id}"">
         <div class=""product__item__pic set-bg"" data-setbg=""../Assets/productImgs/{img}"">
-            
+               
             <ul class=""product__hover"">
-                <li><i class=""fa-regular fa-heart""></i></li>
+                {wish}
             </ul>
         </div>
 </a>
         
         <div class=""product__item__text"">
             <h6>{name}...</h6>
-            <a href=""#"" class=""add-cart"">+ Add To Cart</a>
+       
+            {cart}
             <div class=""rating"">
                 <i class=""fa-regular fa-star""></i>
                 <i class=""fa-regular fa-star""></i>
@@ -205,9 +225,51 @@ namespace Craftglow.User
                     }
                 }
             }
-           
+
         }
+
+        protected string CheckCartList(string id, string product_id)
+        {
+            Connectiondb db = new Connectiondb();
+            if (HttpContext.Current.Session["userid"] != null)
+            {
+                db.Sqlquery("select * from addtocart where product_id='" + product_id + "' and userid='" + HttpContext.Current.Session["userid"] + "'");
+                if (db.ds.Tables[0].Rows.Count > 0)
+                {
+                    return $@"<a href=""Addtocart.aspx"" class=""add-cart"">Go To Cart</a>";
+                }
+            }
+
+            return $@"<a href=""Addtocart.aspx?id={product_id}"" class=""add-cart cart-add""  >+ Add To Cart</a>";
+
+
         }
-      
+
+        protected string checkWishList(string product_id)
+        {
+            if (Session["userid"] != null)
+            {
+                Connectiondb cdb = new Connectiondb();
+                cdb.Sqlquery("select * from wishlist where product_id='" + product_id + "' and userid='" + Session["userid"] + "'");
+                if (cdb.ds.Tables[0].Rows.Count > 0)
+                {
+                    return $@"<li><i class=""fa-solid fa-heart"" style=""color:red"" ></i></li>";
+                }
+                else
+                {
+                    return $@"<li><i class=""fa-regular fa-heart""></i></li>";
+                }
+            }
+
+            return $@"<li><i class=""fa-regular fa-heart""></i></li>";
+
+        }
     }
-    
+
+
+
+
+
+
+}
+

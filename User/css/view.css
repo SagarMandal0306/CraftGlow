@@ -83,13 +83,21 @@
     user-select: none;
 }
 
-.pview .row .right .btns{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px ;
-}
-.pview .row .right .btns button{
+    .pview .row .right .qty .box .qt {
+        outline: none;
+        border: none;
+        width: 11px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .pview .row .right .btns {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+    }
+.pview .row .right .btns .button{
     width: 250px;
     height: 50px;
     font-size: 20px;
@@ -99,13 +107,13 @@
     border-radius: 30px;
     transition: 0.4s;
 }
-.pview .row .right .btns button:first-child{
+.pview .row .right .btns .button:first-child{
     background-color: var(--primary-color);
 }
-.pview .row .right .btns button:last-child{
+.pview .row .right .btns .button:last-child{
     background-color: var(--secondary-color);
 }
-.pview .row .right .btns button:hover{
+.pview .row .right .btns .button:hover{
     background-color: white;
     color: black;
     border: 1px solid black;
@@ -280,6 +288,14 @@
    .recomend .wrapper .product__item{
     margin: 0 20px;
   }
+
+   .err{
+       color:red;
+       font-size:16px;
+       font-weight:bold;
+       padding:0 10px;
+       
+   }
 
 
   @media (max-width:600px){

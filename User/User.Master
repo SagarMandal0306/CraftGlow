@@ -83,7 +83,7 @@
                         </div>
 
                         <ul class="dropdown-menu d-category" aria-labelledby="dropdownMenuButton2" id="">
-                           
+                            <li><a class="dropdown-item" href="Category.aspx?type=all" >All</a></li>
                         </ul>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                 <div class="icons">
                     <% if (HttpContext.Current.Session["Username"] != null)
                         { %>
-                    <p runat="server" id="P3" class="wc-msg"><%= HttpContext.Current.Session["Username"].ToString().ToUpper() %></p>
+                    <p runat="server" id="P3" class="wc-msg"></p>
                     <%}
                         else
                         { %>

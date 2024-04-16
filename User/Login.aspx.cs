@@ -37,6 +37,7 @@ namespace Craftglow.User
                             error_text.Text = "Login Success";
                             Session["Username"] = cdb.ds.Tables[0].Rows[0]["name"].ToString();
                             Session["Useremail"] = email;
+                            Session["userid"] = cdb.ds.Tables[0].Rows[0]["userid"].ToString();
                             Response.Redirect("~/User/Home.aspx");
                         }
                         else

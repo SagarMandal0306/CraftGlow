@@ -6,6 +6,33 @@
     padding: 40px;
 }
 
-.text-center{
-    font-family: 'Public Sans', sans-serif; 
+.product__item{
+    margin:0 20px;
 }
+.text-center {
+    font-family: 'Public Sans', sans-serif;
+}
+
+.btn-div{
+    text-align:center;
+    padding:50px;
+}
+
+.btn{
+    background-color:var(--primary-color);
+    color:white;
+    font-weight:bold;
+    padding:10px;
+    margin:auto;
+}
+    .btn:hover {
+        background-color: var(--primary-color);
+        color:white;
+        box-shadow:0 0 10px 0;
+    }
+
+    .img{
+       
+    }
+
+

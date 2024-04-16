@@ -12,7 +12,8 @@
         <div class="col-md-6 right mt-2">
             <div class="head">
                 <h1 runat="server" id="productName"></h1>
-                <a href="#"><i class="fa-regular fa-heart"></i></a>
+                <asp:LinkButton runat="server" ID="Heart" OnClick="Heart_Click"><i runat="server" id="HeartLike" class="fa-solid fa-heart"></i></asp:LinkButton>
+                <%--<a href="#"><i class="fa-regular fa-heart"></i></a>--%>
             </div>
             <p class="instock">In Stock</p>
             <div class="review">
@@ -35,13 +36,17 @@
                 <span style="font-size: 20px;">Qty</span>
                 <div class="box">
                     <span>-</span>
-                    <span>0</span>
+                    <asp:TextBox runat="server" ID="TextQt" Text="1" CssClass="qt"></asp:TextBox>
+                    <%--<span runat="server" id="Qty">0</span>--%>
                     <span>+</span>
                 </div>
+                <span runat="server" id="err" class="err"  ></span>
             </div>
             <div class="btns">
-                <button>Add To Cart</button>
-                <button>Buy Now</button>
+                <asp:Button runat="server" ID="AddToCart" Text="Add To Cart" CssClass="button" OnClick="AddToCart_Click"/>
+                <asp:Button runat="server" ID="BuyNow" Text="BuyNow" CssClass="button"/>
+              <%--  <button>Add To Cart</button>
+                <button>Buy Now</button>--%>
             </div>
             <hr>
             <div class="work">
@@ -214,11 +219,11 @@
                   </div>
                 <div class="mb-3 form-div">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" >
                   </div>
                   <div class="mb-3 form-div">
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <textarea id="message" name="message" rows="4" ></textarea>
                   </div>
                   
                   <button type="submit" class="craft-btn">Submit Review</button>

@@ -7,29 +7,8 @@
     <div class="cart mt-5">
         <h1 class="text-center">Shopping Cart</h1>
         <div class="row p-5">
-            <div class="col-md-8">
-               <div class="cart-box">
-                <div class="left">
-                    <img src="../Assets/user/products/dsc02497_1.jpg" alt="">
-                    <div class="text">
-                        <h1>Old-Shool-Charpahi-Style-Tray</h1>
-                        <p><i class="fa-solid fa-indian-rupee-sign"></i>8000</p>
-                    </div>
-                </div>
-                <div class="right">
-                    <i class="fa-solid fa-xmark"></i>
-                    <div class="qty">
-                        <!-- <span style="font-size: 20px;">Qty</span> -->
-                        <div class="box">
-                            <span>-</span>
-                            <span>0</span>
-                            <span>+</span>
-                        </div>
-                    </div>
-                   
-                </div>
-               </div>
-              
+            <div runat="server" class="col-md-8 cartContainer " id="cartContainer"  >
+               
             </div>
             <div class="col-md-4">
                 <div class="box">
@@ -37,27 +16,28 @@
                     <div class="contain">
                         <div>
                             <p>Subtotal</p>
-                            <p><i class="fa-solid fa-indian-rupee-sign"></i>8000</p>
+                            <p><i class="fa-solid fa-indian-rupee-sign"></i><strong runat="server" id="Subtotal">0</strong></p>
                         </div>
                         <div>
                             <p>Discount</p>
-                            <p><i class="fa-solid fa-indian-rupee-sign"></i>8000</p>
+                            <p><i class="fa-solid fa-indian-rupee-sign"></i><strong runat="server" id="Discount">0</strong></p>
                         </div>
                         <div>
                             <p>Tax</p>
-                            <p><i class="fa-solid fa-indian-rupee-sign"></i>8000</p>
+                            <p><i class="fa-solid fa-indian-rupee-sign"></i><strong runat="server" id="Tax">0</strong></p>
                         </div>
                         <div>
                             <p>Order Total Incl. Tax</p>
-                            <p><i class="fa-solid fa-indian-rupee-sign"></i>8000</p>
+                            <p><i class="fa-solid fa-indian-rupee-sign"></i><strong runat="server" id="IncTax">0</strong></p>
                         </div>
                         <div>
                             <p>Order Total Excl. Tax</p>
-                            <p><i class="fa-solid fa-indian-rupee-sign"></i>8000</p>
+                            <p><i class="fa-solid fa-indian-rupee-sign"></i><strong runat="server" id="ExcTax">0</strong></p>
                         </div>
                     </div>
                 </div>
-                <button class="btn-proceed">Proceed Payment</button>
+                
+                <button class="btn-proceed">Place Order</button>
             </div>
         </div>
     </div>

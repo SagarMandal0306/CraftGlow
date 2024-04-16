@@ -15,9 +15,7 @@ namespace Craftglow.User
             
             if (HttpContext.Current.Session["UserName"] == null)
             {
-                
                  Response.Redirect("~/User/Login.aspx");
-
             }
             else
             {
@@ -31,6 +29,7 @@ namespace Craftglow.User
         {
             HttpContext.Current.Session["UserName"] = null;
             HttpContext.Current.Session["UserEmail"] = null;
+            HttpContext.Current.Session["userid"] = null;
             Response.Redirect("~/User/Login.aspx");
         }
 

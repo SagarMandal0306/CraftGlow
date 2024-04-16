@@ -3,8 +3,11 @@
 /* font-family: 'Raleway', sans-serif; */
 p{
     margin: 0;
-    font-family: 'Raleway', sans-serif; 
+    font-family: 'Ubuntu', sans-serif; 
     font-weight: bold;
+}
+a{
+    color:black;
 }
 .box{
     border: 1px solid rgb(114, 114, 114,0.4);
@@ -63,6 +66,7 @@ p{
 }
 .cart-box .left .text h1{
     font-size: 20px;
+    width:400px;
 }
 .cart-box .right{
     display: flex;
@@ -83,6 +87,13 @@ p{
     margin-left: 10px;
 }
 
+ .qty .box .qt {
+    outline: none;
+    border: none;
+    width: 11px;
+    font-size: 20px;
+    font-weight: bold;
+}
 .qty .box span{
     padding: 0 10px;
     cursor: pointer;
@@ -90,7 +101,13 @@ p{
     font-weight: bold;
     user-select: none;
 }
-.cart-box .right i{
+
+.cart-box .right #X{
+    outline:none;
+    border:none;
+
+}
+.cart-box .right i {
     padding: 10px;
     font-size: 20px;
     transition: 0.5s;
@@ -99,6 +116,16 @@ p{
 .cart-box .right i:hover{
     background-color: black;
     color: white;
+}
+
+
+
+
+.cartContainer  {
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    flex-direction:column;
 }
 
 

@@ -3,24 +3,32 @@
 document.addEventListener('DOMContentLoaded', function() {
     let qtyMinus = document.querySelector(".qty .box span:first-child"); // Selects the "-" span
     let qtyPlus = document.querySelector(".qty .box span:last-child"); // Selects the "+" span
-    let qty=document.querySelector(".qty .box span:nth-child(2)");
+    let qty=document.querySelector(".qty .box .qt");
     
     
     qtyMinus.onclick=()=>{
-        let number=parseInt(qty.textContent);
+        let number=parseInt(qty.value);
         if(number!=0){
-            qty.textContent=number-1;
+            qty.value=number-1;
             
         }
     }
 
     qtyPlus.onclick=()=>{
-        let number=parseInt(qty.textContent);
-        qty.textContent=number+1;
+        let number=parseInt(qty.value);
+        qty.value=number+1;
     }
 
+    let cartItems = document.querySelectorAll(".cart-add");
 
-    document.addEventListener("DOMContentLoaded", function() {
+    cartItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            item.innerText = "Go to Cart";
+            // You can add more logic here to handle cart functionality
+        });
+    });
+
+  
         const stars = document.querySelectorAll('.star-rating input');
       
         stars.forEach((star, index) => {
@@ -33,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
           });
         });
-      });
+      
       
     
 });

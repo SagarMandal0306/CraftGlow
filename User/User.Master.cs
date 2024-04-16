@@ -16,7 +16,7 @@ namespace Craftglow.User
             {
                 string[] arr = HttpContext.Current.Session["username"].ToString().Split(' ');
                 user.InnerText= arr[0].ToUpper();
-               
+               P3.InnerText = arr[0].ToUpper(); 
             }
         }
 

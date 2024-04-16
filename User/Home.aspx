@@ -43,7 +43,7 @@
                 <div runat="server" id="newProducts"  class="wrapper" >
 
                 </div>
-                <a href="#" class="craft-btn my-5">View All</a>
+                <a href="Category.aspx?type=all" class="craft-btn my-5">View All</a>
             </div>
             
             <div class="categories">

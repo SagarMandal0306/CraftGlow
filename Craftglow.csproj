@@ -86,6 +86,8 @@
     <Content Include="Assets\categoryImg\images %282%29.jpeg" />
     <Content Include="Assets\categoryImg\images.jpeg" />
     <Content Include="Assets\categoryImg\istockphoto-1304422715-612x612.jpg" />
+    <Content Include="Assets\gif\empty_cart.gif" />
+    <Content Include="Assets\gif\image_processing20210802-2754-uc47v2.gif" />
     <Content Include="Assets\icons\menu-02-svgrepo-com.svg" />
     <Content Include="Assets\user\227729.jpg" />
     <Content Include="Assets\user\about-image.jpg" />
@@ -98,6 +100,7 @@
     <Content Include="Assets\user\download %281%29.jpeg" />
     <Content Include="Assets\user\download.jpeg" />
     <Content Include="Assets\user\logo.png" />
+    <Content Include="Assets\user\preview.jpg" />
     <Content Include="Assets\user\products\dsc02308.jpg" />
     <Content Include="Assets\user\products\dsc02497_1.jpg" />
     <Content Include="Assets\user\products\dsc02512_3_3.jpg" />
