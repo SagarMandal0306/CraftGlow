@@ -75,13 +75,13 @@
   <ItemGroup>
     <Content Include="Admin\AddCategory.aspx" />
     <Content Include="Admin\AddProduct.aspx" />
+    <Content Include="Admin\AllOrders.aspx" />
     <Content Include="Admin\AllProducts.aspx" />
     <Content Include="Admin\AllUsers.aspx" />
     <Content Include="Admin\css\Custome.css" />
     <Content Include="Admin\css\Login.css" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\Login.aspx" />
-    <Content Include="Admin\Profile.aspx" />
     <Content Include="Assets\categoryImg\images %281%29.jpeg" />
     <Content Include="Assets\categoryImg\images %282%29.jpeg" />
     <Content Include="Assets\categoryImg\images.jpeg" />
@@ -115,22 +115,26 @@
     <Content Include="Assets\user\products\view4.jpg" />
     <Content Include="Assets\user\rebrand-login-ill.svg" />
     <Content Include="Assets\user\vase-pottery-decoration-wood-craft-table-cultures-nature-clay-generated-by-ai-free-photo.jpg" />
-    <Content Include="User\About.aspx" />
     <Content Include="User\css\addtocart.css" />
     <Content Include="User\css\category.css" />
     <Content Include="User\css\layout.css" />
     <Content Include="User\css\Loader.css" />
     <Content Include="User\css\Login.css" />
+    <Content Include="User\css\OrderPlaced.css" />
+    <Content Include="User\css\Orders.css" />
     <Content Include="User\css\view.css" />
     <Content Include="User\css\wishlist.css" />
     <Content Include="User\Home.aspx" />
     <Content Include="User\javascript\addtocart.js" />
     <Content Include="User\javascript\category.js" />
+    <Content Include="User\javascript\Common.js" />
     <Content Include="User\javascript\Home.js" />
     <Content Include="User\javascript\view.js" />
-    <Content Include="User\javascript\wishlist.js" />
     <Content Include="User\Login.aspx" />
+    <Content Include="User\OrderPlaced.aspx" />
+    <Content Include="User\Orders.aspx" />
     <Content Include="User\Profile.aspx" />
+    <Content Include="User\ResetPassword.aspx" />
     <Content Include="User\Signup.aspx" />
     <Content Include="User\ProductView.aspx" />
     <Content Include="User\Category.aspx" />
@@ -160,6 +164,13 @@
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AllOrders.aspx.cs">
+      <DependentUpon>AllOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AllOrders.aspx.designer.cs">
+      <DependentUpon>AllOrders.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AllProducts.aspx.cs">
       <DependentUpon>AllProducts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -188,28 +199,35 @@
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Profile.aspx.cs">
-      <DependentUpon>Profile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Profile.aspx.designer.cs">
-      <DependentUpon>Profile.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User\About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="User\About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="User\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="User\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\OrderPlaced.aspx.cs">
+      <DependentUpon>OrderPlaced.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\OrderPlaced.aspx.designer.cs">
+      <DependentUpon>OrderPlaced.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Orders.aspx.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Orders.aspx.designer.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\Signup.aspx.cs">
       <DependentUpon>Signup.aspx</DependentUpon>

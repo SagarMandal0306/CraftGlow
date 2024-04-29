@@ -34,6 +34,9 @@ th, td {
      background-color: #fff !important;    
 }
 .SelectedProductImage{
-    width:55px;
+    width:87px;
     font-size:8px;
+}
+.category_grid, .userslist {
+    width: -webkit-fill-available;
 }

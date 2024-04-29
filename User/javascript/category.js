@@ -4,7 +4,6 @@
     cartItems.forEach((item) => {
         item.addEventListener("click", () => {
             item.innerText = "Go to Cart";
-            // You can add more logic here to handle cart functionality
         });
     });
 

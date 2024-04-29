@@ -10,7 +10,7 @@
             
         </div>
         <div class="body">
-            <p class="text-secondary">categories / <strong><u runat="server" id="categoryName"></u></strong></p>
+            <p class="text-secondary">Categories / <strong><u runat="server" id="categoryName"></u></strong></p>
             <hr>
             <div runat="server" class="wrapper" id="categoryProducts">
             </div>

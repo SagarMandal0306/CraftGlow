@@ -7,9 +7,6 @@
    <meta charset="utf-8">
     <title>Admin </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -22,10 +19,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
+   
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -100,6 +94,9 @@
                 <asp:HyperLink ID="AllUsers" runat="server" NavigateUrl="~/Admin/AllUsers.aspx" CssClass='<%# "nav-item nav-link " + IsActive("AllUsers") %>'>
                     <i class="fa fa-users me-2"></i>All Users
                 </asp:HyperLink>
+                <asp:HyperLink ID="AllOrders" runat="server" NavigateUrl="~/Admin/AllOrders.aspx" CssClass='<%# "nav-item nav-link " + IsActive("AllOrders") %>'>
+                    <i class="fab fa-blackberry me-2"></i>All Orders
+                </asp:HyperLink>
 
             </div>
 
@@ -125,10 +122,9 @@
                             <span class="d-none d-lg-inline-flex">Settings</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <form class="dropdown_form">
-                                <asp:HyperLink ID="profile" NavigateUrl="Profile.aspx" runat="server">My Profile</asp:HyperLink>
+                            <div class="dropdown_form">
                                 <asp:LinkButton ID="logoutAdmin" runat="server" OnClick="logoutAdmin_Click">Log Out</asp:LinkButton>
-                            </form>
+                            </div>
 
                         </div>
                     </div>
@@ -137,27 +133,14 @@
             <!-- Navbar End -->
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-
-            
-
             </div>
-           
          </div>
-
-
     </form>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/chart/chart.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
+   
     <!--  Javascript -->
     <script src="js/main.js"></script>
 </body>

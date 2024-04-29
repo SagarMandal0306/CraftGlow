@@ -45,12 +45,8 @@ namespace Craftglow.Admin
                     }
 
                 }
-                catch (Exception ex)
+                catch
                 {
-                    // Log the exception details (you can replace this with your logging mechanism)
-                    System.Diagnostics.Trace.WriteLine($"Exception: {ex.GetType().FullName}\nMessage: {ex.Message}\nStack Trace: {ex.StackTrace}");
-
-                    // Display a user-friendly error message
                     error_text.Text = "An error occurred while processing your request. Please try again later.";
                     return;
                 }

@@ -60,13 +60,7 @@ namespace Craftglow.User
         <div class=""product__item__text"">
             <h6>{name}...</h6>
             {cart}
-            <div class=""rating"">
-                <i class=""fa-regular fa-star""></i>
-                <i class=""fa-regular fa-star""></i>
-                <i class=""fa-regular fa-star""></i>
-                <i class=""fa-regular fa-star""></i>
-                <i class=""fa-regular fa-star""></i>
-            </div>
+           
             <h5><i class=""fa-solid fa-indian-rupee-sign""></i>{price}</h5>
         </div>
     </div>
@@ -128,13 +122,7 @@ namespace Craftglow.User
                                     <div class=""product__item__text"">
                                         <h6>{name}...</h6>
                                         {cart}
-                                        <div class=""rating"">
-                                            <i class=""fa-regular fa-star""></i>
-                                            <i class=""fa-regular fa-star""></i>
-                                            <i class=""fa-regular fa-star""></i>
-                                            <i class=""fa-regular fa-star""></i>
-                                            <i class=""fa-regular fa-star""></i>
-                                        </div>
+                                        
                                         <h5><i class=""fa-solid fa-indian-rupee-sign""></i>{price}</h5>
                                     </div>
                                 </div>
@@ -205,13 +193,7 @@ namespace Craftglow.User
             <h6>{name}...</h6>
        
             {cart}
-            <div class=""rating"">
-                <i class=""fa-regular fa-star""></i>
-                <i class=""fa-regular fa-star""></i>
-                <i class=""fa-regular fa-star""></i>
-                <i class=""fa-regular fa-star""></i>
-                <i class=""fa-regular fa-star""></i>
-            </div>
+            
             <h5><i class=""fa-solid fa-indian-rupee-sign""></i>{price}</h5>
         </div>
     </div>

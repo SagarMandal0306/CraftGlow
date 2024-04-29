@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -30,6 +31,14 @@ namespace Craftglow.Admin
         {
             Connectiondb cdb = new Connectiondb();
             cdb.Sqlquery("Select product_id,product_name,product_image,price from products");
+            DataTable productTable = cdb.ds.Tables[0];
+            productTable.Columns.Add("product_image_url",typeof(string));
+            string imgPath = "~/Assets/productImgs/";
+            foreach(DataRow row in productTable.Rows)
+            {
+                string image_name = row["product_image"].ToString();
+                row["product_image_url"] = imgPath + image_name;
+            }
             productlist_grid.DataSource = cdb.ds;
             productlist_grid.DataBind();
         }

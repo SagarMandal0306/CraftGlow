@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,6 +20,19 @@ namespace Craftglow.Admin
             {
                 Label adminName = (Label)Master.FindControl("adminName");
                 adminName.Text = "Welcome "+Session["Admin"].ToString();
+
+                if (!IsPostBack)
+                {
+                    Connectiondb cdb = new Connectiondb();
+                    cdb.Sqlquery("select * from [user]");
+                    NoOfUsers.InnerText = cdb.ds.Tables[0].Rows.Count.ToString();
+                    cdb.Sqlquery("select * from orders");
+                    NoOfOrders.InnerText = cdb.ds.Tables[0].Rows.Count.ToString();
+                    cdb.Sqlquery("select * from products");
+                    TotalProducts.InnerText = cdb.ds.Tables[0].Rows.Count.ToString();
+                    cdb.Sqlquery("select * from category");
+                    TotalCategory.InnerText = cdb.ds.Tables[0].Rows.Count.ToString();
+                }
             }
         }
     }

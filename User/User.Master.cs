@@ -17,6 +17,14 @@ namespace Craftglow.User
                 string[] arr = HttpContext.Current.Session["username"].ToString().Split(' ');
                 user.InnerText= arr[0].ToUpper();
                P3.InnerText = arr[0].ToUpper(); 
+                Connectiondb cdb = new Connectiondb();
+                string userid = HttpContext.Current.Session["userid"].ToString();
+                cdb.Sqlquery("select * from addtocart where userid='"+userid+"'");
+                NoOfcartItem.Text = cdb.ds.Tables[0].Rows.Count.ToString();
+            }
+            else
+            {
+                NoOfcartItem.Visible = false;
             }
         }
 

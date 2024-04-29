@@ -1,0 +1,21 @@
+﻿.OrderPlacedContainer {
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--primary-color);
+}
+
+    .OrderPlacedContainer h2 {
+        color: #198754;
+        font-weight:900;
+    }
+
+    .OrderPlacedContainer .orderLink {
+        background-color: var(--secondary-color);
+        padding: 5px 15px;
+        border-radius: 5px;
+        color: var(--primary-color);
+    }
